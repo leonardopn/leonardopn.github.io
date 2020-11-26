@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1fde6f4e.chunk.css",
+    "main.js": "/static/js/main.1d6dfb4b.chunk.js",
+    "main.js.map": "/static/js/main.1d6dfb4b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.057e1014.js",
+    "runtime-main.js.map": "/static/js/runtime-main.057e1014.js.map",
+    "static/js/2.c258dc26.chunk.js": "/static/js/2.c258dc26.chunk.js",
+    "static/js/2.c258dc26.chunk.js.map": "/static/js/2.c258dc26.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.89379d9e2280852bd74685a8c2a5659d.js": "/precache-manifest.89379d9e2280852bd74685a8c2a5659d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.1fde6f4e.chunk.css.map": "/static/css/main.1fde6f4e.chunk.css.map",
+    "static/js/2.c258dc26.chunk.js.LICENSE.txt": "/static/js/2.c258dc26.chunk.js.LICENSE.txt",
+    "static/media/defaultButton.css": "/static/media/Roboto-Regular.11eabca2.ttf",
+    "static/media/icon-unip.png": "/static/media/icon-unip.d251c624.png",
+    "static/media/icons8-javascript-100.png": "/static/media/icons8-javascript-100.4297abcb.png",
+    "static/media/profile.png": "/static/media/profile.8e32d5a8.png",
+    "static/media/profile2.jpg": "/static/media/profile2.f3bd4396.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.057e1014.js",
+    "static/js/2.c258dc26.chunk.js",
+    "static/css/main.1fde6f4e.chunk.css",
+    "static/js/main.1d6dfb4b.chunk.js"
+  ]
+}

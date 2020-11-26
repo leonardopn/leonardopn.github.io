@@ -1,6 +1,0 @@
-.flexDiv {
-    display         : flex;
-    flex-wrap       : wrap;
-    align-items     : stretch;
-    justify-content : flex-start;
-}
