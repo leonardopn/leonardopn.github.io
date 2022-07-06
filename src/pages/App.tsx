@@ -1,5 +1,9 @@
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 
 export function App() {
-	return <Container>Olá mundo</Container>;
+	return (
+		<Container>
+			<Content />
+		</Container>
+	);
 }

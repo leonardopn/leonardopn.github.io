@@ -7,4 +7,19 @@ export const Container = styled.div`
 	background-position: center;
 	width: 100%;
 	height: 100vh;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+
+export const Content = styled.div`
+	border-radius: 10px;
+	border: 10px solid ${({ theme }) => theme.colors.Pink};
+	width: 60%;
+	height: 70%;
+
+	-webkit-box-shadow: 0px 0px 105px 0px rgba(255, 121, 197, 0.9);
+	-moz-box-shadow: 0px 0px 105px 0px rgba(255, 121, 197, 0.9);
+	box-shadow: 0px 0px 105px 0px rgba(255, 121, 197, 0.9);
 `;
