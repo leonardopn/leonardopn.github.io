@@ -1,3 +1,5 @@
+import { Container } from "./styles";
+
 export function App() {
-	return <div>Olá mundo</div>;
+	return <Container>Olá mundo</Container>;
 }
