@@ -1,15 +1,15 @@
+import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ThemeProvider } from "styled-components";
-import { Reset as ResetCSS } from "styled-reset";
-import theme from "./global/styles/theme";
+import { theme } from "./global/styles/theme";
 import { App } from "./pages/App";
+import "@fontsource/bebas-neue";
+import "@fontsource/poppins";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
-		<ThemeProvider theme={theme}>
-			<ResetCSS />
+		<ChakraProvider theme={theme}>
 			<App />
-		</ThemeProvider>
+		</ChakraProvider>
 	</React.StrictMode>
 );
