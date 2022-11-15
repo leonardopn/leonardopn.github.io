@@ -15,14 +15,13 @@ const colors = {
 
 const fonts = {
 	title: "'Bebas Neue', cursive",
-	text: "'Poppins', sans-serif",
+	text: "'JetBrains Mono', monospace",
 };
 
 const global = {
 	body: {
 		bg: "Background",
 		color: "Foreground",
-		padding: "10",
 		fontFamily: "text",
 	},
 };

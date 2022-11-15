@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { theme } from "./global/styles/theme";
 import { App } from "./pages/App";
 import "@fontsource/bebas-neue";
-import "@fontsource/poppins";
+import "@fontsource/jetbrains-mono";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
