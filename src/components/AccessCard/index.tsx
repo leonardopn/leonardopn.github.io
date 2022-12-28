@@ -1,6 +1,7 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, HStack, Image, Text, VStack } from "@chakra-ui/react";
 
 import { useMe } from "../../hooks/useMe";
+import { SocialButton } from "../Button/SocialButton";
 
 const holeCardW = 120;
 const holeCardH = 20;
@@ -10,17 +11,20 @@ const ribbonCardW = holeCardW - 30;
 const ribbonCardH = 280;
 const ribbonCardTop = -ribbonCardH + holeCardTop + holeCardH / 2;
 
+const imageBackdropW = 380;
+const imageBackdropH = 200;
 const imageBoxSize = 180;
 const imageMarginTop = 80;
+
+const basicInfoMt = imageMarginTop + 10;
 
 const clipPath = "polygon(0 100%, 0 0, 100% 0, 100% 100%, 50% 70%)";
 
 export function AccessCard() {
-	const { photoProfile, name, role } = useMe();
+	const { photoProfile, name, role, miniAbout } = useMe();
 
 	return (
 		<Flex
-			h={600}
 			w={380}
 			direction="column"
 			bg="Background2"
@@ -30,8 +34,8 @@ export function AccessCard() {
 			mt={-ribbonCardTop}>
 			<Box
 				bg="GradientDefault"
-				h={200}
-				w={380}
+				h={`${imageBackdropH}px`}
+				w={`${imageBackdropW}px`}
 				position="relative"
 				borderRadius="10px 10px 0 0"
 				clipPath={clipPath}
@@ -71,10 +75,29 @@ export function AccessCard() {
 				left="50%"
 				marginLeft={`-${imageBoxSize / 2}px`}
 			/>
-			<Box mt={`${imageMarginTop + 10}px`} textAlign="center">
-				<Text fontSize="xl">{name}</Text>
-				<Text fontSize="md">{role}</Text>
-			</Box>
+			<Flex
+				padding={"30px 10px"}
+				direction={"column"}
+				mt={`${basicInfoMt}px`}
+				textAlign="center"
+				flex={1}
+				gap="60px"
+				justify="space-between">
+				<VStack justify="center">
+					<Text fontSize="xl" as="b">
+						{name}
+					</Text>
+					<Text fontSize="md" color="Green">
+						{role}
+					</Text>
+					<Text fontSize="sm" color="Yellow" as={"em"}>{`"${miniAbout}"`}</Text>
+				</VStack>
+				<HStack justify="center" gap={5}>
+					<SocialButton social="github" />
+					<SocialButton social="facebook" />
+					<SocialButton social="linkedin" />
+				</HStack>
+			</Flex>
 		</Flex>
 	);
 }
