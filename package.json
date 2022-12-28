@@ -17,12 +17,14 @@
     "@fontsource/bebas-neue": "^4.5.9",
     "@fontsource/jetbrains-mono": "^4.5.11",
     "@fontsource/poppins": "^4.5.10",
+    "color": "^4.2.3",
     "framer-motion": "^6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@iconify/react": "^4.0.1",
+    "@types/color": "^3.0.3",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
