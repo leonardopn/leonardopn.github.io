@@ -11,6 +11,7 @@ const colors = {
 	Purple: "#bd93f9",
 	Red: "#ff5555",
 	Yellow: "#f1fa8c",
+	GradientDefault: "linear-gradient(70deg, rgba(149,128,255,1) 0%, rgba(128,255,234,1) 100%);",
 };
 
 const fonts = {
