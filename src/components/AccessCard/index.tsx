@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, HStack, Image, Text, useMediaQuery, VStack } from "@chakra-ui/react";
 
 import { useMe } from "../../hooks/useMe";
 import { SocialButton } from "../Button/SocialButton";
@@ -22,44 +22,51 @@ const clipPath = "polygon(0 100%, 0 0, 100% 0, 100% 100%, 50% 70%)";
 
 export function AccessCard() {
 	const { photoProfile, name, role, miniAbout } = useMe();
+	const [isUp480] = useMediaQuery("(min-width: 480px)");
 
 	return (
 		<Flex
-			w={380}
+			w="100%"
+			maxW={isUp480 ? imageBackdropW : "initial"}
+			h="fit-content"
 			direction="column"
 			bg="Background2"
-			borderRadius={10}
+			borderRadius={isUp480 ? 10 : 0}
 			position="relative"
-			ml={20}
-			mt={-ribbonCardTop}>
+			m={10}
+			mt={isUp480 ? -ribbonCardTop : 0}>
 			<Box
 				bg="GradientDefault"
 				h={`${imageBackdropH}px`}
-				w={`${imageBackdropW}px`}
+				w={isUp480 ? `${imageBackdropW}px` : "full"}
 				position="relative"
-				borderRadius="10px 10px 0 0"
+				borderRadius={isUp480 ? "10px 10px 0 0" : 0}
 				clipPath={clipPath}
 			/>
 
-			<Box
-				h={`${holeCardH}px`}
-				w={`${holeCardW}px`}
-				borderRadius={10}
-				bg="Background"
-				position="absolute"
-				top={`${holeCardTop}px`}
-				left="50%"
-				marginLeft={`-${holeCardW / 2}px`}
-			/>
-			<Box
-				h={ribbonCardH}
-				w={`${ribbonCardW}px`}
-				bg="GradientDefault"
-				position="absolute"
-				top={ribbonCardTop}
-				left="50%"
-				marginLeft={`-${ribbonCardW / 2}px`}
-			/>
+			{isUp480 && (
+				<>
+					<Box
+						h={`${holeCardH}px`}
+						w={`${holeCardW}px`}
+						borderRadius={10}
+						bg="Background"
+						position="absolute"
+						top={`${holeCardTop}px`}
+						left="50%"
+						marginLeft={`-${holeCardW / 2}px`}
+					/>
+					<Box
+						h={ribbonCardH}
+						w={`${ribbonCardW}px`}
+						bg="GradientDefault"
+						position="absolute"
+						top={ribbonCardTop}
+						left="50%"
+						marginLeft={`-${ribbonCardW / 2}px`}
+					/>
+				</>
+			)}
 
 			<Image
 				src={photoProfile}

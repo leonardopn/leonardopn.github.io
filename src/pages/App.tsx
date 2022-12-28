@@ -1,6 +1,37 @@
-export function App() {
-	return <div>Testando</div>;
-}
+import { Divider, Flex, Text, useMediaQuery } from "@chakra-ui/react";
+import { AccessCard } from "../components/AccessCard";
 
-const about =
-	"Sou formado em ciência da computação na Universidade Paulista (UNIP) e desenvolvedor da TradePro Tecnologia. Ademais, estou cursando pós-graduação em Desenvolvimento multiplataforma mobile na Faculdade Descomplica. Atualmente trabalho com projetos fullstack, utilizando as linguagens de programação, Node (TypeScript), React e Firebase. Fiquei muito tempo focado no desenvolvimento web com React e Node, mas hoje, tento me aperfeiçoar na área mobile com React Native.";
+export function App() {
+	const [isUp1000px] = useMediaQuery("(min-width: 1000px)");
+	const [isUp480px] = useMediaQuery("(min-width: 480px)");
+
+	return (
+		<Flex
+			minH="100vh"
+			direction={isUp1000px ? "row" : "column"}
+			align={isUp1000px ? "normal" : "center"}>
+			<AccessCard />
+			{!isUp480px && <Divider />}
+			<Flex
+				w={isUp480px ? "fit-content" : "100%"}
+				h="fit-content"
+				direction={"column"}
+				bg="Background2"
+				flex={1}
+				margin={10}
+				marginY={isUp1000px ? "auto" : 10}
+				borderRadius={isUp480px ? 10 : 0}
+				align="center"
+				textAlign={"center"}
+				p={10}>
+				<Text as="b" fontSize="4xl">
+					🔨🔧
+				</Text>
+				<Text as="b" fontSize="4xl">
+					Site em desenvolvimento
+				</Text>
+				<Text fontSize="3xl">Em breve um novo portfólio 🚀</Text>
+			</Flex>
+		</Flex>
+	);
+}
