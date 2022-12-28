@@ -10,7 +10,7 @@
     "lint": "eslint --ext .ts,.tsx ./src",
     "lint:fix": "eslint --fix --ext .ts,.tsx ./src",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.4.5",
