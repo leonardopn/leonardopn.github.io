@@ -27,4 +27,8 @@ const global = {
 	},
 };
 
-export const theme = extendTheme({ colors, fonts, styles: { global } });
+const myTheme = { colors, fonts, styles: { global } };
+
+export const theme = extendTheme(myTheme);
+
+export type MyCustomTheme = typeof myTheme;
