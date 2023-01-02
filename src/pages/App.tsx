@@ -1,6 +1,7 @@
-import { Divider, Flex, Text, useMediaQuery } from "@chakra-ui/react";
+import { Divider, Flex, useMediaQuery } from "@chakra-ui/react";
 import { AccessCard } from "../components/AccessCard";
 import { Particles } from "../components/Particles";
+import { ScrollMainInformation } from "../components/ScrollMainlInformation";
 
 export function App() {
 	const [isUp1000px] = useMediaQuery("(min-width: 1000px)");
@@ -14,27 +15,7 @@ export function App() {
 			<Particles />
 			<AccessCard />
 			{!isUp480px && <Divider />}
-			<Flex
-				zIndex={1}
-				w={isUp480px ? "fit-content" : "100%"}
-				h="fit-content"
-				direction={"column"}
-				bg="Background2"
-				flex={1}
-				margin={10}
-				marginY={isUp1000px ? "auto" : 10}
-				borderRadius={isUp480px ? 10 : 0}
-				align="center"
-				textAlign={"center"}
-				p={10}>
-				<Text as="b" fontSize="4xl">
-					🔨🔧
-				</Text>
-				<Text as="b" fontSize="4xl">
-					Site em desenvolvimento
-				</Text>
-				<Text fontSize="3xl">Em breve um novo portfólio 🚀</Text>
-			</Flex>
+			<ScrollMainInformation />
 		</Flex>
 	);
 }
