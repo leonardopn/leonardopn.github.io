@@ -1,4 +1,5 @@
 import { Box, Flex, HStack, Image, Text, useMediaQuery, VStack } from "@chakra-ui/react";
+import { Fragment, useMemo } from "react";
 import Tilt from "react-parallax-tilt";
 
 import { useMe } from "../../hooks/useMe";
@@ -25,8 +26,12 @@ export function AccessCard() {
 	const { photoProfile, name, role, miniAbout } = useMe();
 	const [isUp480] = useMediaQuery("(min-width: 480px)");
 
+	const Container = useMemo(() => {
+		return isUp480 ? Tilt : Fragment;
+	}, [isUp480]);
+
 	return (
-		<Tilt>
+		<Container>
 			<Flex
 				w="100%"
 				maxW={isUp480 ? imageBackdropW : "initial"}
@@ -108,6 +113,6 @@ export function AccessCard() {
 					</HStack>
 				</Flex>
 			</Flex>
-		</Tilt>
+		</Container>
 	);
 }
