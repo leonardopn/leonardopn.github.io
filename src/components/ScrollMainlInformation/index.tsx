@@ -1,4 +1,4 @@
-import { Flex, useMediaQuery, Text } from "@chakra-ui/react";
+import { Flex, Text, useMediaQuery } from "@chakra-ui/react";
 
 export function ScrollMainInformation() {
 	const [isUp1000px] = useMediaQuery("(min-width: 1000px)");
@@ -6,7 +6,6 @@ export function ScrollMainInformation() {
 
 	return (
 		<Flex
-			zIndex={1}
 			w={isUp480px ? "fit-content" : "100%"}
 			h="fit-content"
 			direction={"column"}
@@ -17,6 +16,7 @@ export function ScrollMainInformation() {
 			borderRadius={isUp480px ? 10 : 0}
 			align="center"
 			textAlign={"center"}
+			position="relative"
 			p={10}>
 			<Text as="b" fontSize="4xl">
 				🔨🔧
