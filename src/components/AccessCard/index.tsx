@@ -1,9 +1,8 @@
 import { Box, Flex, HStack, Image, Text, useMediaQuery, VStack } from "@chakra-ui/react";
-import { Fragment, useMemo } from "react";
-import Tilt from "react-parallax-tilt";
 import { useGlow } from "../../hooks/useGlow";
 import { useMe } from "../../hooks/useMe";
 import { SocialButton } from "../Button/SocialButton";
+import { Tilt } from "../Tilt";
 
 const holeCardW = 120;
 const holeCardH = 20;
@@ -27,12 +26,8 @@ export function AccessCard() {
 	const { photoProfile, name, role, miniAbout } = useMe();
 	const [isUp480] = useMediaQuery("(min-width: 480px)");
 
-	const Container = useMemo(() => {
-		return isUp480 ? Tilt : Fragment;
-	}, [isUp480]);
-
 	return (
-		<Container>
+		<Tilt tiltAxis={"y"} useTilt={isUp480} style={{ height: "fit-content" }}>
 			<Flex
 				_before={glow}
 				onMouseEnter={onToggleGlow}
@@ -45,7 +40,9 @@ export function AccessCard() {
 				borderRadius={isUp480 ? 10 : 0}
 				position="relative"
 				m={10}
-				mt={isUp480 ? -ribbonCardTop : 0}>
+				mt={isUp480 ? -ribbonCardTop - 80 : 0}
+				_hover={{ mt: isUp480 ? -ribbonCardTop : 0 }}
+				transition="margin-top 0.2s">
 				<Box
 					bg="GradientDefault"
 					h={`${imageBackdropH}px`}
@@ -119,6 +116,6 @@ export function AccessCard() {
 					</HStack>
 				</Flex>
 			</Flex>
-		</Container>
+		</Tilt>
 	);
 }
