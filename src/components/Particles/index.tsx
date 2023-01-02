@@ -10,11 +10,11 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 	const { colors } = useTheme();
 
 	const particlesInit = useCallback(async (engine: Engine) => {
-		console.log(engine);
+		import.meta.env.DEV && console.log(engine);
 		// NOTE: you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
 		// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
 		// starting from v2 you can add only the features you need reducing the bundle size
-		import.meta.env.DEV && (await loadFull(engine));
+		await loadFull(engine);
 	}, []);
 
 	const particlesLoaded = useCallback(async (container: Container | undefined) => {
