@@ -1,4 +1,5 @@
 import { Box, Flex, HStack, Image, Text, useMediaQuery, VStack } from "@chakra-ui/react";
+import Tilt from "react-parallax-tilt";
 
 import { useMe } from "../../hooks/useMe";
 import { SocialButton } from "../Button/SocialButton";
@@ -25,86 +26,88 @@ export function AccessCard() {
 	const [isUp480] = useMediaQuery("(min-width: 480px)");
 
 	return (
-		<Flex
-			w="100%"
-			maxW={isUp480 ? imageBackdropW : "initial"}
-			h="fit-content"
-			direction="column"
-			bg="Background2"
-			borderRadius={isUp480 ? 10 : 0}
-			position="relative"
-			m={10}
-			mt={isUp480 ? -ribbonCardTop : 0}>
-			<Box
-				bg="GradientDefault"
-				h={`${imageBackdropH}px`}
-				w={isUp480 ? `${imageBackdropW}px` : "full"}
-				position="relative"
-				borderRadius={isUp480 ? "10px 10px 0 0" : 0}
-				clipPath={clipPath}
-			/>
-
-			{isUp480 && (
-				<>
-					<Box
-						h={`${holeCardH}px`}
-						w={`${holeCardW}px`}
-						borderRadius={10}
-						bg="Background"
-						position="absolute"
-						top={`${holeCardTop}px`}
-						left="50%"
-						marginLeft={`-${holeCardW / 2}px`}
-					/>
-					<Box
-						h={ribbonCardH}
-						w={`${ribbonCardW}px`}
-						bg="GradientDefault"
-						position="absolute"
-						top={ribbonCardTop}
-						left="50%"
-						marginLeft={`-${ribbonCardW / 2}px`}
-					/>
-				</>
-			)}
-
-			<Image
-				src={photoProfile}
-				boxSize={imageBoxSize}
-				objectFit="scale-down"
-				bg="GradientDefault"
-				borderStyle="solid"
-				borderWidth="5px"
-				borderColor="Background2"
-				borderRadius="full"
-				position="absolute"
-				top={`${imageMarginTop}px`}
-				left="50%"
-				marginLeft={`-${imageBoxSize / 2}px`}
-			/>
+		<Tilt>
 			<Flex
-				padding={"30px 10px"}
-				direction={"column"}
-				mt={`${basicInfoMt}px`}
-				textAlign="center"
-				flex={1}
-				gap="60px"
-				justify="space-between">
-				<VStack justify="center">
-					<Text fontSize="xl" as="b">
-						{name}
-					</Text>
-					<Text fontSize="md" color="Green">
-						{role}
-					</Text>
-					<Text fontSize="sm" color="Yellow" as={"em"}>{`"${miniAbout}"`}</Text>
-				</VStack>
-				<HStack justify="center" gap={5}>
-					<SocialButton social="github" />
-					<SocialButton social="facebook" />
-					<SocialButton social="linkedin" />
-				</HStack>
+				w="100%"
+				maxW={isUp480 ? imageBackdropW : "initial"}
+				h="fit-content"
+				direction="column"
+				bg="Background2"
+				borderRadius={isUp480 ? 10 : 0}
+				position="relative"
+				m={10}
+				mt={isUp480 ? -ribbonCardTop : 0}>
+				<Box
+					bg="GradientDefault"
+					h={`${imageBackdropH}px`}
+					w={isUp480 ? `${imageBackdropW}px` : "full"}
+					position="relative"
+					borderRadius={isUp480 ? "10px 10px 0 0" : 0}
+					clipPath={clipPath}
+				/>
+
+				{isUp480 && (
+					<>
+						<Box
+							h={`${holeCardH}px`}
+							w={`${holeCardW}px`}
+							borderRadius={10}
+							bg="Background"
+							position="absolute"
+							top={`${holeCardTop}px`}
+							left="50%"
+							marginLeft={`-${holeCardW / 2}px`}
+						/>
+						<Box
+							h={ribbonCardH}
+							w={`${ribbonCardW}px`}
+							bg="GradientDefault"
+							position="absolute"
+							top={ribbonCardTop}
+							left="50%"
+							marginLeft={`-${ribbonCardW / 2}px`}
+						/>
+					</>
+				)}
+
+				<Image
+					src={photoProfile}
+					boxSize={imageBoxSize}
+					objectFit="scale-down"
+					bg="GradientDefault"
+					borderStyle="solid"
+					borderWidth="5px"
+					borderColor="Background2"
+					borderRadius="full"
+					position="absolute"
+					top={`${imageMarginTop}px`}
+					left="50%"
+					marginLeft={`-${imageBoxSize / 2}px`}
+				/>
+				<Flex
+					padding={"30px 10px"}
+					direction={"column"}
+					mt={`${basicInfoMt}px`}
+					textAlign="center"
+					flex={1}
+					gap="60px"
+					justify="space-between">
+					<VStack justify="center">
+						<Text fontSize="xl" as="b">
+							{name}
+						</Text>
+						<Text fontSize="md" color="Green">
+							{role}
+						</Text>
+						<Text fontSize="sm" color="Yellow" as={"em"}>{`"${miniAbout}"`}</Text>
+					</VStack>
+					<HStack justify="center" gap={5}>
+						<SocialButton social="github" />
+						<SocialButton social="facebook" />
+						<SocialButton social="linkedin" />
+					</HStack>
+				</Flex>
 			</Flex>
-		</Flex>
+		</Tilt>
 	);
 }
