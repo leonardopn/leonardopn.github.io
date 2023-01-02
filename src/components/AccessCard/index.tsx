@@ -1,7 +1,7 @@
 import { Box, Flex, HStack, Image, Text, useMediaQuery, VStack } from "@chakra-ui/react";
 import { Fragment, useMemo } from "react";
 import Tilt from "react-parallax-tilt";
-
+import { useGlow } from "../../hooks/useGlow";
 import { useMe } from "../../hooks/useMe";
 import { SocialButton } from "../Button/SocialButton";
 
@@ -23,6 +23,7 @@ const basicInfoMt = imageMarginTop + 10;
 const clipPath = "polygon(0 100%, 0 0, 100% 0, 100% 100%, 50% 70%)";
 
 export function AccessCard() {
+	const { glow, onToggleGlow } = useGlow();
 	const { photoProfile, name, role, miniAbout } = useMe();
 	const [isUp480] = useMediaQuery("(min-width: 480px)");
 
@@ -33,6 +34,9 @@ export function AccessCard() {
 	return (
 		<Container>
 			<Flex
+				_before={glow}
+				onMouseEnter={onToggleGlow}
+				onMouseLeave={onToggleGlow}
 				w="100%"
 				maxW={isUp480 ? imageBackdropW : "initial"}
 				h="fit-content"
@@ -54,6 +58,7 @@ export function AccessCard() {
 				{isUp480 && (
 					<>
 						<Box
+							_before={glow}
 							h={`${holeCardH}px`}
 							w={`${holeCardW}px`}
 							borderRadius={10}
@@ -64,6 +69,7 @@ export function AccessCard() {
 							marginLeft={`-${holeCardW / 2}px`}
 						/>
 						<Box
+							_before={glow}
 							h={ribbonCardH}
 							w={`${ribbonCardW}px`}
 							bg="GradientDefault"
