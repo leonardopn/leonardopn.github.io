@@ -72,7 +72,7 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 						default: "bounce",
 					},
 					random: false,
-					speed: 2,
+					speed: 1.5,
 					straight: false,
 				},
 				number: {
