@@ -23,6 +23,7 @@
     "framer-motion": "^6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-parallax-tilt": "^1.7.80",
     "react-router-dom": "^6.6.1",
     "react-tsparticles": "^2.7.1",
     "tsparticles": "^2.7.1"
