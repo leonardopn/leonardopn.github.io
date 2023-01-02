@@ -22,7 +22,7 @@ const basicInfoMt = imageMarginTop + 10;
 const clipPath = "polygon(0 100%, 0 0, 100% 0, 100% 100%, 50% 70%)";
 
 export function AccessCard() {
-	const { glow, onToggleGlow } = useGlow();
+	const { glow, onHideGlow, onShowGlow } = useGlow();
 	const { photoProfile, name, role, miniAbout } = useMe();
 	const [isUp480] = useMediaQuery("(min-width: 480px)");
 
@@ -30,8 +30,8 @@ export function AccessCard() {
 		<Tilt tiltAxis={"y"} useTilt={isUp480} style={{ height: "fit-content" }}>
 			<Flex
 				_before={glow}
-				onMouseEnter={onToggleGlow}
-				onMouseLeave={onToggleGlow}
+				onMouseEnter={onShowGlow}
+				onMouseLeave={onHideGlow}
 				w="100%"
 				maxW={isUp480 ? imageBackdropW : "initial"}
 				h="fit-content"
