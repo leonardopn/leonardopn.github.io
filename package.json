@@ -21,6 +21,7 @@
     "@fontsource/poppins": "^4.5.10",
     "color": "^4.2.3",
     "framer-motion": "^6",
+    "lodash": "^4.17.21",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-parallax-tilt": "^1.7.80",
