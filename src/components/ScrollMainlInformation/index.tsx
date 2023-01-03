@@ -1,21 +1,30 @@
 import { Divider, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 import { AnimatePresence, motion, MotionProps } from "framer-motion";
+import { useMemo } from "react";
+import { isMobile } from "react-device-detect";
 import { useMe } from "../../hooks/useMe";
 import { useTheme } from "../../hooks/useTheme";
 import { Timeline } from "../Timeline";
 
-const defaultAnimation: MotionProps = {
-	initial: { x: 1500, display: "none" },
-	animate: { x: 0, display: "block" },
-	transition: { type: "spring", bounce: 1, damping: 10, delay: 1 },
-};
-
 export function ScrollMainInformation() {
 	const { name, role, about } = useMe();
 	const [isUp480px] = useMediaQuery("(min-width: 480px)");
+
 	const {
 		boxShadow: { DefaultBoxShadow },
 	} = useTheme();
+
+	const defaultAnimation = useMemo<MotionProps>(
+		() =>
+			!isMobile
+				? {
+						initial: { x: 1500, display: "none" },
+						animate: { x: 0, display: "block" },
+						transition: { type: "spring", bounce: 1, damping: 15, delay: 1 },
+				  }
+				: {},
+		[isUp480px, isMobile]
+	);
 
 	return (
 		<AnimatePresence>
@@ -33,12 +42,16 @@ export function ScrollMainInformation() {
 					gap={10}
 					p={isUp480px ? 10 : 5}>
 					<Flex direction="column">
-						<Text as="b" fontSize="4xl">
-							{name}
-						</Text>
-						<Text as="b" fontSize="2xl" color="Primary">
-							{role}
-						</Text>
+						{isUp480px && (
+							<>
+								<Text as="b" fontSize="4xl">
+									{name}
+								</Text>
+								<Text as="b" fontSize="2xl" color="Primary">
+									{role}
+								</Text>
+							</>
+						)}
 						<Text as="i" fontSize="md" color="Tertiary" mt={3}>
 							{`"${about}"`}
 						</Text>

@@ -1,17 +1,19 @@
 import { Box, Flex, HStack, Image, Text, useMediaQuery, VStack } from "@chakra-ui/react";
 import { AnimatePresence, motion, MotionProps } from "framer-motion";
+import { useMemo } from "react";
 import { useGlow } from "../../hooks/useGlow";
 import { useMe } from "../../hooks/useMe";
 import { useTheme } from "../../hooks/useTheme";
 import { SocialButton } from "../Button/SocialButton";
 import { Tilt } from "../Tilt";
+import { isMobile } from "react-device-detect";
 
 const holeCardW = 120;
 const holeCardH = 20;
 const holeCardTop = 30;
 
 const ribbonCardW = holeCardW - 30;
-const ribbonCardH = 280;
+const ribbonCardH = 550;
 const ribbonCardTop = -ribbonCardH + holeCardTop + holeCardH / 2;
 
 const imageBackdropW = 380;
@@ -19,15 +21,11 @@ const imageBackdropH = 200;
 const imageBoxSize = 180;
 const imageMarginTop = 80;
 
+const cardMb = -210;
+
 const basicInfoMt = imageMarginTop + 10;
 
 const clipPath = "polygon(0 100%, 0 0, 100% 0, 100% 100%, 50% 70%)";
-
-const defaultAnimation: MotionProps = {
-	initial: { y: -1500 },
-	animate: { y: 0 },
-	transition: { type: "spring", bounce: 1, damping: 10, delay: 0.3 },
-};
 
 export function AccessCard() {
 	const { glow, onHideGlow, onShowGlow } = useGlow();
@@ -37,6 +35,18 @@ export function AccessCard() {
 	} = useTheme();
 	const [isUp480] = useMediaQuery("(min-width: 480px)");
 	const [isUp1280px] = useMediaQuery("(min-width: 1280px)");
+
+	const defaultAnimation = useMemo<MotionProps>(
+		() =>
+			!isMobile
+				? {
+						initial: { y: -1500 },
+						animate: { y: isUp480 ? -250 : 0 },
+						transition: { type: "spring", bounce: 1, damping: 10, delay: 0.3 },
+				  }
+				: { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { delay: 0.3 } },
+		[isUp480, isMobile]
+	);
 
 	return (
 		<AnimatePresence>
@@ -61,6 +71,7 @@ export function AccessCard() {
 						borderRadius={isUp480 ? 10 : 0}
 						position="relative"
 						m={isUp480 ? 10 : 0}
+						mb={isUp480 ? cardMb : 0}
 						mt={isUp480 ? -ribbonCardTop - 80 : 0}
 						_hover={{ mt: isUp480 ? -ribbonCardTop : 0 }}
 						transition="margin-top 0.2s">
