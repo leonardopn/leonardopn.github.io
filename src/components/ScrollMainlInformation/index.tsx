@@ -1,13 +1,18 @@
 import { Divider, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 import { useMe } from "../../hooks/useMe";
+import { useTheme } from "../../hooks/useTheme";
 import { Timeline } from "../Timeline";
 
 export function ScrollMainInformation() {
 	const { name, role, about } = useMe();
 	const [isUp480px] = useMediaQuery("(min-width: 480px)");
+	const {
+		boxShadow: { DefaultBoxShadow },
+	} = useTheme();
 
 	return (
 		<Flex
+			boxShadow={DefaultBoxShadow}
 			w={isUp480px ? "fit-content" : "100%"}
 			h="fit-content"
 			direction={"column"}

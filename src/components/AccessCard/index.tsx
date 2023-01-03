@@ -1,6 +1,7 @@
 import { Box, Flex, HStack, Image, Text, useMediaQuery, VStack } from "@chakra-ui/react";
 import { useGlow } from "../../hooks/useGlow";
 import { useMe } from "../../hooks/useMe";
+import { useTheme } from "../../hooks/useTheme";
 import { SocialButton } from "../Button/SocialButton";
 import { Tilt } from "../Tilt";
 
@@ -24,6 +25,9 @@ const clipPath = "polygon(0 100%, 0 0, 100% 0, 100% 100%, 50% 70%)";
 export function AccessCard() {
 	const { glow, onHideGlow, onShowGlow } = useGlow();
 	const { photoProfile, name, role, miniAbout } = useMe();
+	const {
+		boxShadow: { DefaultBoxShadow },
+	} = useTheme();
 	const [isUp480] = useMediaQuery("(min-width: 480px)");
 	const [isUp1280px] = useMediaQuery("(min-width: 1280px)");
 
@@ -33,6 +37,7 @@ export function AccessCard() {
 			useTilt={isUp480}
 			style={{ height: "fit-content", position: isUp1280px ? "sticky" : "initial", top: 0 }}>
 			<Flex
+				boxShadow={DefaultBoxShadow}
 				_before={glow}
 				onMouseEnter={onShowGlow}
 				onMouseLeave={onHideGlow}

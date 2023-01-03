@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import Color from "color";
 
 const primaryColors = {
 	Primary: "rgba(149,128,255,1)",
@@ -21,6 +22,20 @@ const colors = {
 	...primaryColors,
 };
 
+const colorToScale = primaryColors.Primary;
+
+const primaryColorScale = {
+	0.4: Color(colorToScale).alpha(0.4).toString(),
+	0.3: Color(colorToScale).alpha(0.3).toString(),
+	0.2: Color(colorToScale).alpha(0.2).toString(),
+	0.1: Color(colorToScale).alpha(0.1).toString(),
+	0.05: Color(colorToScale).alpha(0.05).toString(),
+};
+
+const boxShadow = {
+	DefaultBoxShadow: `${primaryColorScale["0.4"]} -5px 5px, ${primaryColorScale["0.3"]} -10px 10px, ${primaryColorScale["0.2"]} -15px 15px, ${primaryColorScale["0.1"]} -20px 20px, ${primaryColorScale["0.05"]} -25px 25px;`,
+};
+
 const fonts = {
 	title: "'Bebas Neue', cursive",
 	text: "'JetBrains Mono', monospace",
@@ -34,7 +49,7 @@ const global = {
 	},
 };
 
-const myTheme = { colors, fonts, styles: { global } };
+const myTheme = { boxShadow, colors, fonts, styles: { global } };
 
 export const theme = extendTheme(myTheme);
 
