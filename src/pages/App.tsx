@@ -1,4 +1,5 @@
 import { Divider, Flex, useMediaQuery } from "@chakra-ui/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { AccessCard } from "../components/AccessCard";
 import { Particles } from "../components/Particles";
 import { ScrollMainInformation } from "../components/ScrollMainlInformation";
@@ -16,7 +17,18 @@ export function App() {
 			align={isUp1280px ? "normal" : "center"}>
 			<Particles />
 			<AccessCard />
-			{!isUp480px && <Divider />}
+			{!isUp480px && (
+				<AnimatePresence>
+					<motion.div
+						{...{
+							initial: { opacity: 0 },
+							animate: { opacity: 1, width: "100%" },
+							transition: { delay: 1 },
+						}}>
+						<Divider />
+					</motion.div>
+				</AnimatePresence>
+			)}
 			<ScrollMainInformation />
 		</Flex>
 	);
