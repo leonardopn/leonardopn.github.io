@@ -6,6 +6,7 @@
 		"Component: ScrollMainInformation",
 		"Component: AccessCard",
 		"Hook: useGlow",
-		"Component: Tilt"
+		"Component: Tilt",
+		"Theme"
 	]
 }
