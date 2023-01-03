@@ -17,7 +17,7 @@ export function ScrollMainInformation() {
 			borderRadius={isUp480px ? 10 : 0}
 			position="relative"
 			gap={10}
-			p={10}>
+			p={isUp480px ? 10 : 5}>
 			<Flex direction="column">
 				<Text as="b" fontSize="4xl">
 					{name}
