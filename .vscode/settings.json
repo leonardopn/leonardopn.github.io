@@ -1,0 +1,11 @@
+{
+	"conventionalCommits.scopes": [
+		"Page: Page404",
+		"Component: Particles",
+		"Page: App",
+		"Component: ScrollMainInformation",
+		"Component: AccessCard",
+		"Hook: useGlow",
+		"Component: Tilt"
+	]
+}
