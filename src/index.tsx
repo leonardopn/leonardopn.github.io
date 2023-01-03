@@ -7,6 +7,8 @@ import { RouterProvider } from "react-router-dom";
 import { theme } from "./global/styles/theme";
 import { router } from "./routes";
 
+import "react-vertical-timeline-component/style.min.css";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
 		<ChakraProvider theme={theme}>

@@ -10,7 +10,7 @@ export function App() {
 	return (
 		<Flex
 			marginX={"auto"}
-			maxW={"8xl"}
+			maxW={"105rem"}
 			minH="100vh"
 			direction={isUp1280px ? "row" : "column"}
 			align={isUp1280px ? "normal" : "center"}>

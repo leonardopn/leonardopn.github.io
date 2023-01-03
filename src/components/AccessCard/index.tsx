@@ -25,12 +25,13 @@ export function AccessCard() {
 	const { glow, onHideGlow, onShowGlow } = useGlow();
 	const { photoProfile, name, role, miniAbout } = useMe();
 	const [isUp480] = useMediaQuery("(min-width: 480px)");
+	const [isUp1280px] = useMediaQuery("(min-width: 1280px)");
 
 	return (
 		<Tilt
 			tiltAxis={"y"}
 			useTilt={isUp480}
-			style={{ height: "fit-content", position: "sticky", top: 0 }}>
+			style={{ height: "fit-content", position: isUp1280px ? "sticky" : "initial", top: 0 }}>
 			<Flex
 				_before={glow}
 				onMouseEnter={onShowGlow}
