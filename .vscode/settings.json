@@ -9,6 +9,7 @@
 		"Component: Tilt",
 		"Theme",
 		"Component: JobTimelineElement",
-		"Component: Timeline"
+		"Component: Timeline",
+		"Component: EducationTimelineElement"
 	]
 }
