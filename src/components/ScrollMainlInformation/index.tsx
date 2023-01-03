@@ -25,7 +25,7 @@ export function ScrollMainInformation() {
 				<Text as="b" fontSize="2xl" color="Green">
 					{role}
 				</Text>
-				<Text as="i" fontSize="lg" color="Yellow" mt={3}>
+				<Text as="i" fontSize="md" color="Yellow" mt={3}>
 					{`"${about}"`}
 				</Text>
 			</Flex>

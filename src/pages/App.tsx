@@ -4,14 +4,16 @@ import { Particles } from "../components/Particles";
 import { ScrollMainInformation } from "../components/ScrollMainlInformation";
 
 export function App() {
-	const [isUp1000px] = useMediaQuery("(min-width: 1000px)");
+	const [isUp1280px] = useMediaQuery("(min-width: 1280px)");
 	const [isUp480px] = useMediaQuery("(min-width: 480px)");
 
 	return (
 		<Flex
+			marginX={"auto"}
+			maxW={"8xl"}
 			minH="100vh"
-			direction={isUp1000px ? "row" : "column"}
-			align={isUp1000px ? "normal" : "center"}>
+			direction={isUp1280px ? "row" : "column"}
+			align={isUp1280px ? "normal" : "center"}>
 			<Particles />
 			<AccessCard />
 			{!isUp480px && <Divider />}
