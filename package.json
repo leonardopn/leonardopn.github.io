@@ -26,6 +26,7 @@
     "react-parallax-tilt": "^1.7.80",
     "react-router-dom": "^6.6.1",
     "react-tsparticles": "^2.7.1",
+    "react-vertical-timeline-component": "^3.6.0",
     "tsparticles": "^2.7.1"
   },
   "devDependencies": {
