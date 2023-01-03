@@ -27,7 +27,10 @@ export function AccessCard() {
 	const [isUp480] = useMediaQuery("(min-width: 480px)");
 
 	return (
-		<Tilt tiltAxis={"y"} useTilt={isUp480} style={{ height: "fit-content" }}>
+		<Tilt
+			tiltAxis={"y"}
+			useTilt={isUp480}
+			style={{ height: "fit-content", position: "sticky", top: 0 }}>
 			<Flex
 				_before={glow}
 				onMouseEnter={onShowGlow}
