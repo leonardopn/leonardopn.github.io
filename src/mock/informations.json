@@ -10,6 +10,18 @@
     },
     "timeline": [
         {
+            "type": "EDUCATION",
+            "company": "Universidade Paulista (UNIP)",
+            "role": "Ciência da Computação",
+            "period": "2018 - 2021",
+            "location": "Campinas - SP",
+            "description": "Graduação em Ciência da Computação",
+            "tags": [
+                "Bacharelado",
+                "Faculdade"
+            ]
+        },
+        {
             "type": "JOB",
             "company": "Integrance",
             "role": "Estágio em desenvolvimento",
@@ -50,6 +62,30 @@
                 "Node",
                 "React/Native",
                 "Firebase"
+            ]
+        },
+        {
+            "type": "EDUCATION",
+            "company": "Faculdade Descomplica",
+            "role": "Desenvolvimento multi-plataforma mobile",
+            "period": "2022 - 2023",
+            "location": "Online",
+            "description": "Pós-graduação em desenvolvimento multi-plataforma mobile",
+            "tags": [
+                "Pós-graduação",
+                "Faculdade"
+            ]
+        },
+        {
+            "type": "EDUCATION",
+            "company": "Faculdade Descomplica",
+            "role": "Projetos de Cloud Computing",
+            "period": "2022 - 2023",
+            "location": "Online",
+            "description": "Pós-graduação em Projetos de Cloud Computing",
+            "tags": [
+                "Pós-graduação",
+                "Faculdade"
             ]
         }
     ]
