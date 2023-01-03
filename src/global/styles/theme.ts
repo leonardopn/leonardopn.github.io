@@ -1,4 +1,11 @@
 import { extendTheme } from "@chakra-ui/react";
+import Color from "color";
+
+const primaryColors = {
+	Primary: "rgba(149,128,255,1)",
+	Secondary: "rgba(128,255,234,1)",
+	Tertiary: "#50fa7b",
+};
 
 const colors = {
 	Background: "#282a36",
@@ -11,7 +18,22 @@ const colors = {
 	Purple: "rgba(149,128,255,1)",
 	Red: "#ff5555",
 	Yellow: "#f1fa8c",
-	GradientDefault: "linear-gradient(70deg, rgba(149,128,255,1) 0%, rgba(128,255,234,1) 100%)",
+	GradientDefault: `linear-gradient(70deg,${primaryColors.Primary} 0%, ${primaryColors.Secondary} 100%)`,
+	...primaryColors,
+};
+
+const colorToScale = primaryColors.Primary;
+
+const primaryColorScale = {
+	0.4: Color(colorToScale).alpha(0.4).toString(),
+	0.3: Color(colorToScale).alpha(0.3).toString(),
+	0.2: Color(colorToScale).alpha(0.2).toString(),
+	0.1: Color(colorToScale).alpha(0.1).toString(),
+	0.05: Color(colorToScale).alpha(0.05).toString(),
+};
+
+const boxShadow = {
+	DefaultBoxShadow: `${primaryColorScale["0.4"]} -5px 5px, ${primaryColorScale["0.3"]} -10px 10px, ${primaryColorScale["0.2"]} -15px 15px, ${primaryColorScale["0.1"]} -20px 20px, ${primaryColorScale["0.05"]} -25px 25px;`,
 };
 
 const fonts = {
@@ -27,7 +49,7 @@ const global = {
 	},
 };
 
-const myTheme = { colors, fonts, styles: { global } };
+const myTheme = { boxShadow, colors, fonts, styles: { global } };
 
 export const theme = extendTheme(myTheme);
 

@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from "react";
 import TsParticles, { IParticlesProps } from "react-tsparticles";
-import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
+import type { Container, Engine } from "tsparticles-engine";
 import { useTheme } from "../../hooks/useTheme";
 
 interface ParticlesProps extends IParticlesProps {}
@@ -21,6 +21,8 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 		import.meta.env.DEV && console.log(container);
 	}, []);
 
+	const mainColor = useMemo(() => colors.Primary, [colors]);
+
 	const defaultParticlesOptions = useMemo<IParticlesProps["options"]>(
 		() => ({
 			background: {
@@ -28,6 +30,8 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 					value: colors.Background,
 				},
 			},
+			smooth: true,
+
 			fpsLimit: 60,
 			interactivity: {
 				events: {
@@ -53,10 +57,10 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 			},
 			particles: {
 				color: {
-					value: colors.Cyan,
+					value: mainColor,
 				},
 				links: {
-					color: colors.Cyan,
+					color: mainColor,
 					distance: 150,
 					enable: true,
 					opacity: 0.5,
@@ -83,10 +87,10 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 					value: 80,
 				},
 				opacity: {
-					value: 0.5,
+					value: 1,
 				},
 				shape: {
-					type: "circle",
+					type: "square",
 				},
 				size: {
 					value: { min: 1, max: 5 },
