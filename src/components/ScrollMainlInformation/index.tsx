@@ -1,7 +1,9 @@
-import { Flex, Text, useMediaQuery } from "@chakra-ui/react";
+import { Divider, Flex, Text, useMediaQuery } from "@chakra-ui/react";
+import { useMe } from "../../hooks/useMe";
+import { Timeline } from "../Timeline";
 
 export function ScrollMainInformation() {
-	const [isUp1000px] = useMediaQuery("(min-width: 1000px)");
+	const { name, role, about } = useMe();
 	const [isUp480px] = useMediaQuery("(min-width: 480px)");
 
 	return (
@@ -12,19 +14,28 @@ export function ScrollMainInformation() {
 			bg="Background2"
 			flex={1}
 			margin={10}
-			marginY={isUp1000px ? "auto" : 10}
 			borderRadius={isUp480px ? 10 : 0}
-			align="center"
-			textAlign={"center"}
 			position="relative"
+			gap={10}
 			p={10}>
-			<Text as="b" fontSize="4xl">
-				🔨🔧
-			</Text>
-			<Text as="b" fontSize="4xl">
-				Site em desenvolvimento
-			</Text>
-			<Text fontSize="3xl">Em breve um novo portfólio 🚀</Text>
+			<Flex direction="column">
+				<Text as="b" fontSize="4xl">
+					{name}
+				</Text>
+				<Text as="b" fontSize="2xl" color="Green">
+					{role}
+				</Text>
+				<Text as="i" fontSize="lg" color="Yellow" mt={3}>
+					{`"${about}"`}
+				</Text>
+			</Flex>
+			<Divider size="3" />
+			<Flex direction="column">
+				<Text as="b" fontSize="2xl">
+					Linha do tempo
+				</Text>
+				<Timeline />
+			</Flex>
 		</Flex>
 	);
 }
