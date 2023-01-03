@@ -108,10 +108,10 @@ export function AccessCard() {
 						<Text fontSize="xl" as="b">
 							{name}
 						</Text>
-						<Text fontSize="md" color="Green">
+						<Text fontSize="md" color="Primary">
 							{role}
 						</Text>
-						<Text fontSize="sm" color="Yellow" as={"em"}>{`"${miniAbout}"`}</Text>
+						<Text fontSize="sm" color="Tertiary" as={"em"}>{`"${miniAbout}"`}</Text>
 					</VStack>
 					<HStack justify="center" gap={5}>
 						<SocialButton social="github" />

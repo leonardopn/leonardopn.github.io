@@ -3,6 +3,7 @@ import TsParticles, { IParticlesProps } from "react-tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import { useTheme } from "../../hooks/useTheme";
+import { random } from "lodash";
 
 interface ParticlesProps extends IParticlesProps {}
 
@@ -20,6 +21,17 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 	const particlesLoaded = useCallback(async (container: Container | undefined) => {
 		import.meta.env.DEV && console.log(container);
 	}, []);
+
+	const mainColor = useMemo(() => {
+		switch (random(1, 3)) {
+			case 1:
+				return colors.Primary;
+			case 2:
+				return colors.Secondary;
+			default:
+				return colors.Tertiary;
+		}
+	}, [colors]);
 
 	const defaultParticlesOptions = useMemo<IParticlesProps["options"]>(
 		() => ({
@@ -53,10 +65,10 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 			},
 			particles: {
 				color: {
-					value: colors.Cyan,
+					value: mainColor,
 				},
 				links: {
-					color: colors.Cyan,
+					color: mainColor,
 					distance: 150,
 					enable: true,
 					opacity: 0.5,
