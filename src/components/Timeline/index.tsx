@@ -16,6 +16,7 @@ export function Timeline() {
 		() =>
 			timeline.map((job, index) => (
 				<JobTimelineElement
+					visible
 					key={index}
 					title={job.role}
 					location={job.location}
