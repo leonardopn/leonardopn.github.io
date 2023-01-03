@@ -8,6 +8,7 @@
 		"Hook: useGlow",
 		"Component: Tilt",
 		"Theme",
-		"Component: JobTimelineElement"
+		"Component: JobTimelineElement",
+		"Component: Timeline"
 	]
 }

@@ -7,5 +7,50 @@
         "linkedin": "https://www.linkedin.com/in/leonardo-petta-do-nascimento-75674015b/",
         "github": "https://github.com/leonardopn",
         "facebook": "https://www.facebook.com/leonardo.petta.nascimento"
-    }
+    },
+    "timeline": [
+        {
+            "type": "JOB",
+            "company": "Integrance",
+            "role": "Estágio em desenvolvimento",
+            "period": "jun 2020 - nov 2020",
+            "location": "Campinas - SP",
+            "description": "Responsável pelo desenvolvimento de pequenas automações e suporte.",
+            "tags": [
+                "Javascript",
+                "Node",
+                "Google Script",
+                "AWS"
+            ]
+        },
+        {
+            "type": "JOB",
+            "company": "Integrance",
+            "role": "Desenvolvedor Pleno",
+            "period": "nov 2020 - nov 2022",
+            "location": "Campinas - SP",
+            "description": "Responsável pelo desenvolvimento e manutenção de sistemas internos.",
+            "tags": [
+                "Typescript",
+                "Node",
+                "React",
+                "Google Script",
+                "AWS"
+            ]
+        },
+        {
+            "type": "JOB",
+            "company": "TradePro",
+            "role": "Desenvolvedor Pleno",
+            "period": "Abr 2022 - Presente",
+            "location": "Pinhais - PR",
+            "description": "Responsável pelo desenvolvimento e manutenção de sistemas internos utilizando React, React native e Firebase",
+            "tags": [
+                "Typescript",
+                "Node",
+                "React/Native",
+                "Firebase"
+            ]
+        }
+    ]
 }
