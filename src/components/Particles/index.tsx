@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@chakra-ui/react";
 import { useCallback, useMemo } from "react";
 import TsParticles, { IParticlesProps } from "react-tsparticles";
 import { loadFull } from "tsparticles";
@@ -8,6 +9,7 @@ interface ParticlesProps extends IParticlesProps {}
 
 export function Particles({ options, ...restProps }: ParticlesProps) {
 	const { colors } = useTheme();
+	const [isUp480] = useMediaQuery("(min-width: 480px)");
 
 	const particlesInit = useCallback(async (engine: Engine) => {
 		import.meta.env.DEV && console.log(engine);
@@ -100,6 +102,9 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 		}),
 		[]
 	);
+
+	//NOTE: disable particles on mobile
+	if (!isUp480) return null;
 
 	return (
 		<TsParticles
