@@ -1,6 +1,6 @@
-import informations from "../mock/informations.json";
+import { information } from "../mock/information";
 import photoProfile from "../assets/me.png";
 
 export function useMe() {
-	return { ...informations, photoProfile };
+	return { ...information, photoProfile };
 }
