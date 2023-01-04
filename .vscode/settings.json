@@ -11,6 +11,7 @@
 		"Component: JobTimelineElement",
 		"Component: Timeline",
 		"Component: EducationTimelineElement",
-		"Hook: useBoxShadow"
+		"Hook: useBoxShadow",
+		"Component: Skills"
 	]
 }

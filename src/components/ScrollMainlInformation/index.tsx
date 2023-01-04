@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { isMobile } from "react-device-detect";
 import { useMe } from "../../hooks/useMe";
 import { useTheme } from "../../hooks/useTheme";
+import { Skills } from "../Skills";
 import { Timeline } from "../Timeline";
 
 export function ScrollMainInformation() {
@@ -39,7 +40,7 @@ export function ScrollMainInformation() {
 					margin={isUp480px ? 10 : 0}
 					borderRadius={isUp480px ? 10 : 0}
 					position="relative"
-					gap={10}
+					gap={5}
 					p={isUp480px ? 10 : 5}>
 					<Flex direction="column">
 						{isUp480px && (
@@ -57,11 +58,19 @@ export function ScrollMainInformation() {
 						</Text>
 					</Flex>
 					<Divider size="3" />
-					<Flex direction="column">
+					<Flex direction="column" gap={5}>
 						<Text as="b" fontSize="2xl">
 							Linha do tempo
 						</Text>
 						<Timeline />
+					</Flex>
+					<Divider />
+
+					<Flex direction="column" gap={5}>
+						<Text as="b" fontSize="2xl">
+							Tecnologias Conhecidas
+						</Text>
+						<Skills />
 					</Flex>
 				</Flex>
 			</motion.div>
