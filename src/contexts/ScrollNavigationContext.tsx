@@ -22,13 +22,16 @@ function ScrollNavigationProvider({ children }: ScrollNavigationProviderProps) {
 
 	const { hash } = location;
 
+	//NOTE: Ao montar o componente, se houver um hash na URL, o scroll é feito para o elemento com o id correspondente
 	useEffect(() => {
 		const element = document.getElementById(hash.replace("#", ""));
 
 		if (element) {
-			element.scrollIntoView(true);
+			setTimeout(() => {
+				element.scrollIntoView(true);
+			}, 2000);
 		}
-	}, [hash]);
+	}, []);
 
 	return (
 		<ScrollNavigationContext.Provider value={{ location }}>
