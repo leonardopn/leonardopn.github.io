@@ -16,6 +16,7 @@
 		"Component: Skill",
 		"Component: LinkButton",
 		"Component: SocialButton",
-		"Component: Navbar"
+		"Component: Navbar",
+		"Context: ScrollNavigationContext"
 	]
 }

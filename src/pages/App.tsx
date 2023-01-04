@@ -4,13 +4,14 @@ import { AccessCard } from "../components/AccessCard";
 import { Navbar } from "../components/Navbar";
 import { Particles } from "../components/Particles";
 import { ScrollMainInformation } from "../components/ScrollMainlInformation";
+import { ScrollNavigationProvider } from "../contexts/ScrollNavigationContext";
 
 export function App() {
 	const [isUp1280px] = useMediaQuery("(min-width: 1280px)");
 	const [isUp480px] = useMediaQuery("(min-width: 480px)");
 
 	return (
-		<>
+		<ScrollNavigationProvider>
 			<Navbar />
 			<Flex
 				marginX={"auto"}
@@ -34,6 +35,6 @@ export function App() {
 				)}
 				<ScrollMainInformation />
 			</Flex>
-		</>
+		</ScrollNavigationProvider>
 	);
 }
