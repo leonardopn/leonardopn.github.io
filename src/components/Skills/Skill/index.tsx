@@ -35,27 +35,28 @@ export function Skill({ image, name, mainColor, secondaryColor, className }: Ski
 
 	const defaultAnimation = useMemo<MotionProps>(
 		() => ({
-			initial: { opacity: 0, transform: "scale(1)" },
-			animate: { opacity: 1, transform: "scale(1.1)" },
+			initial: { opacity: 0, transform: "scale(1.5)" },
+			whileInView: { opacity: 1, transform: "scale(1)" },
 			transition: {
-				duration: 2,
-				ease: "easeInOut",
-				times: [0, 0.2, 0.5, 0.8, 1],
-				repeat: Infinity,
-				repeatDelay: 1,
+				type: "spring",
+				bounce: 1,
+				damping: 8,
+				delay: 0.3,
 			},
 		}),
 		[]
 	);
 
 	return (
-		<motion.div {...defaultAnimation}>
+		<motion.div style={{ gridRowEnd: sizes.span }} {...defaultAnimation}>
 			<VStack
-				gridRowEnd={sizes.span}
+				w={"full"}
+				h={"full"}
 				className={className}
 				textAlign={"center"}
 				boxShadow={boxShadow.normal}
 				_hover={{ boxShadow: boxShadow.hover, transform: "scale(1.1)" }}
+				transition={"all 0.2s ease-in-out"}
 				bg={secondaryColor}
 				p={10}
 				gap={3}
