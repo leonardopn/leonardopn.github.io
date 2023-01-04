@@ -14,6 +14,7 @@
 		"Hook: useBoxShadow",
 		"Component: Skills",
 		"Component: Skill",
-		"Component: LinkButton"
+		"Component: LinkButton",
+		"Component: SocialButton"
 	]
 }
