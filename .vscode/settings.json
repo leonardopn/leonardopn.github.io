@@ -17,6 +17,7 @@
 		"Component: LinkButton",
 		"Component: SocialButton",
 		"Component: Navbar",
-		"Context: ScrollNavigationContext"
+		"Context: ScrollNavigationContext",
+		"Eslint"
 	]
 }
