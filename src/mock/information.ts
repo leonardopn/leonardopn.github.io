@@ -12,7 +12,7 @@ import javaLogo from "../assets/logos/java.png";
 import javascriptLogo from "../assets/logos/javascript.png";
 import nodeLogo from "../assets/logos/node.png";
 import reactLogo from "../assets/logos/react.png";
-import typescriptLogo from "../assets/logos/react.png";
+import typescriptLogo from "../assets/logos/typescript.png";
 
 export const information = {
 	name: "Leonardo Petta do Nascimento",
