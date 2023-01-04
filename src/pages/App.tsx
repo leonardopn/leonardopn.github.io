@@ -12,7 +12,7 @@ export function App() {
 
 	return (
 		<ScrollNavigationProvider>
-			<Flex>
+			<Flex direction={isUp480px ? "row" : "column"}>
 				<Navbar />
 				<Flex
 					marginX={"auto"}
