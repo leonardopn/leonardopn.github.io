@@ -1,9 +1,13 @@
 import { Grid } from "@chakra-ui/react";
+import { shuffle } from "lodash";
+import { useMemo } from "react";
 import { useMe } from "../../hooks/useMe";
 import { Skill } from "./Skill";
 
 export function Skills() {
 	const { skills } = useMe();
+
+	const randomSkills = useMemo(() => shuffle(skills), [skills]);
 
 	return (
 		<Grid
@@ -11,7 +15,7 @@ export function Skills() {
 			autoRows={"30px"}
 			gap={8}
 			justifyContent="center">
-			{skills.map((skill, index) => (
+			{randomSkills.map((skill, index) => (
 				<Skill key={index} {...skill} className="skills-stack" />
 			))}
 		</Grid>
