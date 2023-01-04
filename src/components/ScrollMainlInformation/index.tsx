@@ -66,7 +66,7 @@ export function ScrollMainInformation() {
 					</Flex>
 					<Divider />
 
-					<Flex direction="column" gap={5}>
+					<Flex direction="column" gap={5} id="tech">
 						<Text as="b" fontSize="2xl">
 							Tecnologias Conhecidas
 						</Text>

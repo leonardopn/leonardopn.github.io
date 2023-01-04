@@ -15,6 +15,7 @@
 		"Component: Skills",
 		"Component: Skill",
 		"Component: LinkButton",
-		"Component: SocialButton"
+		"Component: SocialButton",
+		"Component: Navbar"
 	]
 }
