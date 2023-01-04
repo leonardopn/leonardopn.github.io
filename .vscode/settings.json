@@ -19,6 +19,7 @@
 		"Component: Navbar",
 		"Context: ScrollNavigationContext",
 		"Eslint",
-		"Component: ScrollPoint"
+		"Component: ScrollPoint",
+		"Component: NavbarMobile"
 	]
 }
