@@ -9,10 +9,18 @@ interface SkillProps {
 	image: string;
 	mainColor: string;
 	secondaryColor: string;
+	showName?: boolean;
 	className?: string;
 }
 
-export function Skill({ image, name, mainColor, secondaryColor, className }: SkillProps) {
+export function Skill({
+	image,
+	name,
+	mainColor,
+	secondaryColor,
+	className,
+	showName = true,
+}: SkillProps) {
 	const boxShadow = useBoxShadow(mainColor);
 
 	const sizes = useMemo(() => {
@@ -62,10 +70,12 @@ export function Skill({ image, name, mainColor, secondaryColor, className }: Ski
 				gap={3}
 				borderRadius={10}
 				justify={"center"}>
-				<Image src={image} alt={name + "_logo"} />
-				<Text color={mainColor} as="b">
-					{name}
-				</Text>
+				<Image src={image} alt={name + "_logo"} w={100} />
+				{showName && (
+					<Text color={mainColor} as="b">
+						{name}
+					</Text>
+				)}
 			</VStack>
 		</motion.div>
 	);
