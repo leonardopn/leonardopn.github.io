@@ -63,12 +63,12 @@ export function ScrollMainInformation() {
 					<Divider size="3" />
 					<Flex direction="column" gap={5}>
 						<Text as="b" fontSize="2xl">
-							Linha do tempo
+							Linha do Tempo
 						</Text>
 						<Timeline />
 					</Flex>
-					<Divider />
 					<ScrollPoint id="#tech" />
+					<Divider />
 					<Flex direction="column" gap={5}>
 						<Text as="b" fontSize="2xl">
 							Tecnologias Conhecidas
