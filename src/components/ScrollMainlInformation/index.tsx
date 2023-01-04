@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { isMobile } from "react-device-detect";
 import { useMe } from "../../hooks/useMe";
 import { useTheme } from "../../hooks/useTheme";
+import { ScrollPoint } from "../ScrollPoint";
 import { Skills } from "../Skills";
 import { Timeline } from "../Timeline";
 
@@ -30,6 +31,7 @@ export function ScrollMainInformation() {
 	return (
 		<AnimatePresence>
 			<motion.div {...defaultAnimation}>
+				<ScrollPoint id="#home" />
 				<Flex
 					boxShadow={DefaultBoxShadow}
 					w={isUp480px ? "fit-content" : "100%"}
@@ -57,6 +59,7 @@ export function ScrollMainInformation() {
 							{`"${about}"`}
 						</Text>
 					</Flex>
+					<ScrollPoint id="#timeline" />
 					<Divider size="3" />
 					<Flex direction="column" gap={5}>
 						<Text as="b" fontSize="2xl">
@@ -65,8 +68,8 @@ export function ScrollMainInformation() {
 						<Timeline />
 					</Flex>
 					<Divider />
-
-					<Flex direction="column" gap={5} id="tech">
+					<ScrollPoint id="#tech" />
+					<Flex direction="column" gap={5}>
 						<Text as="b" fontSize="2xl">
 							Tecnologias Conhecidas
 						</Text>
