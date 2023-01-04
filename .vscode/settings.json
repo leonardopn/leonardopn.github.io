@@ -13,6 +13,7 @@
 		"Component: EducationTimelineElement",
 		"Hook: useBoxShadow",
 		"Component: Skills",
-		"Component: Skill"
+		"Component: Skill",
+		"Component: LinkButton"
 	]
 }
