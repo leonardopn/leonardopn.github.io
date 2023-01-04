@@ -8,7 +8,7 @@ import { ScrollPoint } from "../ScrollPoint";
 import { Skills } from "../Skills";
 import { Timeline } from "../Timeline";
 
-export function ScrollMainInformation() {
+export function CardMainInformation() {
 	const { name, role, about } = useMe();
 	const [isUp480px] = useMediaQuery("(min-width: 480px)");
 

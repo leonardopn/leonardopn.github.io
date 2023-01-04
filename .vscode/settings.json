@@ -3,7 +3,7 @@
 		"Page: Page404",
 		"Component: Particles",
 		"Page: App",
-		"Component: ScrollMainInformation",
+		"Component: CardMainInformation",
 		"Component: AccessCard",
 		"Hook: useGlow",
 		"Component: Tilt",

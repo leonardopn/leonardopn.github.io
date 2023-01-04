@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { AccessCard } from "../components/AccessCard";
 import { Navbar } from "../components/Navbar";
 import { Particles } from "../components/Particles";
-import { ScrollMainInformation } from "../components/ScrollMainlInformation";
+import { CardMainInformation } from "../components/CardMainInformation";
 import { ScrollNavigationProvider } from "../contexts/ScrollNavigationContext";
 
 export function App() {
@@ -34,7 +34,7 @@ export function App() {
 							</motion.div>
 						</AnimatePresence>
 					)}
-					<ScrollMainInformation />
+					<CardMainInformation />
 				</Flex>
 			</Flex>
 		</ScrollNavigationProvider>
