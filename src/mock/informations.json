@@ -88,5 +88,109 @@
                 "Faculdade"
             ]
         }
+    ],
+    "skills": [
+        {
+            "name": "React JS",
+            "image": "src/assets/logos/react.png",
+            "mainColor": "#63dbf9",
+            "secondaryColor": "#212121"
+        },
+        {
+            "name": "Node JS",
+            "image": "src/assets/logos/node.png",
+            "mainColor": "#78b763",
+            "secondaryColor": "#303030"
+        },
+        {
+            "name": "React JS",
+            "image": "src/assets/logos/react.png",
+            "mainColor": "#63dbf9",
+            "secondaryColor": "#212121"
+        },
+        {
+            "name": "Node JS",
+            "image": "src/assets/logos/node.png",
+            "mainColor": "#78b763",
+            "secondaryColor": "#303030"
+        },
+        {
+            "name": "React JS",
+            "image": "src/assets/logos/react.png",
+            "mainColor": "#63dbf9",
+            "secondaryColor": "#212121"
+        },
+        {
+            "name": "Node JS",
+            "image": "src/assets/logos/node.png",
+            "mainColor": "#78b763",
+            "secondaryColor": "#303030"
+        },
+        {
+            "name": "React JS",
+            "image": "src/assets/logos/react.png",
+            "mainColor": "#63dbf9",
+            "secondaryColor": "#212121"
+        },
+        {
+            "name": "Node JS",
+            "image": "src/assets/logos/node.png",
+            "mainColor": "#78b763",
+            "secondaryColor": "#303030"
+        },
+        {
+            "name": "React JS",
+            "image": "src/assets/logos/react.png",
+            "mainColor": "#63dbf9",
+            "secondaryColor": "#212121"
+        },
+        {
+            "name": "Node JS",
+            "image": "src/assets/logos/node.png",
+            "mainColor": "#78b763",
+            "secondaryColor": "#303030"
+        },
+        {
+            "name": "React JS",
+            "image": "src/assets/logos/react.png",
+            "mainColor": "#63dbf9",
+            "secondaryColor": "#212121"
+        },
+        {
+            "name": "Node JS",
+            "image": "src/assets/logos/node.png",
+            "mainColor": "#78b763",
+            "secondaryColor": "#303030"
+        },
+        {
+            "name": "React JS",
+            "image": "src/assets/logos/react.png",
+            "mainColor": "#63dbf9",
+            "secondaryColor": "#212121"
+        },
+        {
+            "name": "Node JS",
+            "image": "src/assets/logos/node.png",
+            "mainColor": "#78b763",
+            "secondaryColor": "#303030"
+        },
+        {
+            "name": "React JS",
+            "image": "src/assets/logos/react.png",
+            "mainColor": "#63dbf9",
+            "secondaryColor": "#212121"
+        },
+        {
+            "name": "Node JS",
+            "image": "src/assets/logos/node.png",
+            "mainColor": "#78b763",
+            "secondaryColor": "#303030"
+        },
+        {
+            "name": "CSS3",
+            "image": "src/assets/logos/css3.png",
+            "mainColor": "#0474bb",
+            "secondaryColor": "#363737"
+        }
     ]
 }
