@@ -12,28 +12,30 @@ export function App() {
 
 	return (
 		<ScrollNavigationProvider>
-			<Navbar />
-			<Flex
-				marginX={"auto"}
-				maxW={"105rem"}
-				minH="100vh"
-				direction={isUp1280px ? "row" : "column"}
-				align={isUp1280px ? "normal" : "center"}>
-				<Particles />
-				<AccessCard />
-				{!isUp480px && (
-					<AnimatePresence>
-						<motion.div
-							{...{
-								initial: { opacity: 0 },
-								animate: { opacity: 1, width: "100%" },
-								transition: { delay: 1 },
-							}}>
-							<Divider />
-						</motion.div>
-					</AnimatePresence>
-				)}
-				<ScrollMainInformation />
+			<Flex>
+				<Navbar />
+				<Flex
+					marginX={"auto"}
+					maxW={"105rem"}
+					minH="100vh"
+					direction={isUp1280px ? "row" : "column"}
+					align={isUp1280px ? "normal" : "center"}>
+					<Particles />
+					<AccessCard />
+					{!isUp480px && (
+						<AnimatePresence>
+							<motion.div
+								{...{
+									initial: { opacity: 0 },
+									animate: { opacity: 1, width: "100%" },
+									transition: { delay: 1 },
+								}}>
+								<Divider />
+							</motion.div>
+						</AnimatePresence>
+					)}
+					<ScrollMainInformation />
+				</Flex>
 			</Flex>
 		</ScrollNavigationProvider>
 	);

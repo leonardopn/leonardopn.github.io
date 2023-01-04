@@ -1,33 +1,47 @@
-import { HStack } from "@chakra-ui/react";
+import { Tooltip, VStack } from "@chakra-ui/react";
 import { PossibleRoutes } from "../../contexts/ScrollNavigationContext";
 import { LinkButton } from "../Button/LinkButton";
 
 export function Navbar() {
 	return (
-		<HStack
-			w="full"
-			h={"16"}
-			bg="Background2"
-			position="sticky"
-			top={0}
-			zIndex={1}
-			paddingX={5}
-			spacing={10}>
-			<LinkButton icon="mdi:home" routerProps={{ to: PossibleRoutes[0] }} />
-			<HStack spacing={5}>
-				<LinkButton
-					routerProps={{ to: PossibleRoutes[1] }}
-					paddingX={5}
-					icon="mdi:chart-timeline-variant-shimmer">
-					Linha do Tempo
-				</LinkButton>
-				<LinkButton
-					routerProps={{ to: PossibleRoutes[2] }}
-					paddingX={5}
-					icon="material-symbols:computer-rounded">
-					Tecnologias Conhecidas
-				</LinkButton>
-			</HStack>
-		</HStack>
+		<VStack w={20} bg="Background2" zIndex={1} paddingY={5} spacing={10}>
+			<VStack w={20} bg="Background2" position="sticky" top={10} spacing={10}>
+				<Tooltip hasArrow label="Início" bg="Primary" color="white" placement="right">
+					<span>
+						<LinkButton icon="mdi:home" isExternal href={PossibleRoutes[0]} />
+					</span>
+				</Tooltip>
+				<VStack spacing={5}>
+					<Tooltip
+						hasArrow
+						label="Linha do Tempo"
+						bg="Primary"
+						color="white"
+						placement="right">
+						<span>
+							<LinkButton
+								isExternal
+								href={PossibleRoutes[1]}
+								icon="mdi:chart-timeline-variant-shimmer"
+							/>
+						</span>
+					</Tooltip>
+					<Tooltip
+						hasArrow
+						label="Tecnologias Conhecidas"
+						bg="Primary"
+						color="white"
+						placement="right">
+						<span>
+							<LinkButton
+								isExternal
+								href={PossibleRoutes[2]}
+								icon="material-symbols:computer-rounded"
+							/>
+						</span>
+					</Tooltip>
+				</VStack>
+			</VStack>
+		</VStack>
 	);
 }
