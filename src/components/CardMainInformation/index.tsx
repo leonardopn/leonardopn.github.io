@@ -4,10 +4,11 @@ import { useMemo } from "react";
 import { isMobile } from "react-device-detect";
 import { useMe } from "../../hooks/useMe";
 import { useTheme } from "../../hooks/useTheme";
+import { ScrollPoint } from "../ScrollPoint";
 import { Skills } from "../Skills";
 import { Timeline } from "../Timeline";
 
-export function ScrollMainInformation() {
+export function CardMainInformation() {
 	const { name, role, about } = useMe();
 	const [isUp480px] = useMediaQuery("(min-width: 480px)");
 
@@ -30,6 +31,7 @@ export function ScrollMainInformation() {
 	return (
 		<AnimatePresence>
 			<motion.div {...defaultAnimation}>
+				<ScrollPoint id="#home" />
 				<Flex
 					boxShadow={DefaultBoxShadow}
 					w={isUp480px ? "fit-content" : "100%"}
@@ -57,15 +59,16 @@ export function ScrollMainInformation() {
 							{`"${about}"`}
 						</Text>
 					</Flex>
+					<ScrollPoint id="#timeline" />
 					<Divider size="3" />
 					<Flex direction="column" gap={5}>
 						<Text as="b" fontSize="2xl">
-							Linha do tempo
+							Linha do Tempo
 						</Text>
 						<Timeline />
 					</Flex>
+					<ScrollPoint id="#tech" />
 					<Divider />
-
 					<Flex direction="column" gap={5}>
 						<Text as="b" fontSize="2xl">
 							Tecnologias Conhecidas

@@ -1,9 +1,6 @@
-import { Link } from "@chakra-ui/react";
-import { Icon } from "@iconify/react";
 import { useMemo } from "react";
 import { useMe } from "../../../hooks/useMe";
-import { useTheme } from "../../../hooks/useTheme";
-import Color from "color";
+import { LinkButton } from "../LinkButton";
 
 interface SocialButtonProps {
 	social: "facebook" | "linkedin" | "github";
@@ -11,7 +8,6 @@ interface SocialButtonProps {
 
 export function SocialButton({ social }: SocialButtonProps) {
 	const { social: mySocialNetworks } = useMe();
-	const theme = useTheme();
 
 	const data = useMemo(() => {
 		switch (social) {
@@ -26,21 +22,5 @@ export function SocialButton({ social }: SocialButtonProps) {
 		}
 	}, [social]);
 
-	return (
-		<Link
-			display={"flex"}
-			justifyContent={"center"}
-			alignItems={"center"}
-			colorScheme="Background"
-			href={data.link}
-			target="_blank"
-			rel="noopener"
-			_hover={{ background: "Background" }}
-			background={Color(theme.colors.Background).alpha(0.3).toString()}
-			w={50}
-			h={50}
-			borderRadius={10}>
-			<Icon icon={data.icon} width={30} height={30} />
-		</Link>
-	);
+	return <LinkButton isExternal icon={data.icon} href={data.link} target="_blank" />;
 }

@@ -42,6 +42,7 @@ const fonts = {
 };
 
 const global = {
+	html: { scrollBehavior: "smooth" },
 	body: {
 		bg: "Background",
 		color: "Foreground",

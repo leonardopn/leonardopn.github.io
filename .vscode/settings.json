@@ -3,7 +3,7 @@
 		"Page: Page404",
 		"Component: Particles",
 		"Page: App",
-		"Component: ScrollMainInformation",
+		"Component: CardMainInformation",
 		"Component: AccessCard",
 		"Hook: useGlow",
 		"Component: Tilt",
@@ -13,6 +13,13 @@
 		"Component: EducationTimelineElement",
 		"Hook: useBoxShadow",
 		"Component: Skills",
-		"Component: Skill"
+		"Component: Skill",
+		"Component: LinkButton",
+		"Component: SocialButton",
+		"Component: Navbar",
+		"Context: ScrollNavigationContext",
+		"Eslint",
+		"Component: ScrollPoint",
+		"Component: NavbarMobile"
 	]
 }
