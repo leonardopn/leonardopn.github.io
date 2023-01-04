@@ -10,6 +10,9 @@
 		"Theme",
 		"Component: JobTimelineElement",
 		"Component: Timeline",
-		"Component: EducationTimelineElement"
+		"Component: EducationTimelineElement",
+		"Hook: useBoxShadow",
+		"Component: Skills",
+		"Component: Skill"
 	]
 }

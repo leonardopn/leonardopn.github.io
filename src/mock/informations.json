@@ -88,5 +88,94 @@
                 "Faculdade"
             ]
         }
+    ],
+    "skills": [
+        {
+            "name": "React JS",
+            "image": "src/assets/logos/react.png",
+            "mainColor": "#63dbf9",
+            "secondaryColor": "#212121"
+        },
+        {
+            "name": "Node JS",
+            "image": "src/assets/logos/node.png",
+            "mainColor": "#78b763",
+            "secondaryColor": "#303030"
+        },
+        {
+            "name": "CSS3",
+            "image": "src/assets/logos/css3.png",
+            "mainColor": "#0474bb",
+            "secondaryColor": "#363737"
+        },
+        {
+            "name": "HTML5",
+            "image": "src/assets/logos/html5.png",
+            "mainColor": "#fe502b",
+            "secondaryColor": "#363737"
+        },
+        {
+            "name": "Java",
+            "image": "src/assets/logos/java.png",
+            "mainColor": "#e93034",
+            "secondaryColor": "#ffffff"
+        },
+        {
+            "name": "Javascript",
+            "image": "src/assets/logos/javascript.png",
+            "mainColor": "#f0db5f",
+            "secondaryColor": "#323330"
+        },
+        {
+            "name": "Typescript",
+            "image": "src/assets/logos/typescript.png",
+            "mainColor": "#2e79c3",
+            "secondaryColor": "#ffffff"
+        },
+        {
+            "name": "AWS",
+            "image": "src/assets/logos/aws.png",
+            "mainColor": "#fe9b2b",
+            "secondaryColor": "#222e3b",
+            "showName": false
+        },
+        {
+            "name": "Google Cloud Platform",
+            "image": "src/assets/logos/gcp.png",
+            "mainColor": "#4285ef",
+            "secondaryColor": "#ffffff"
+        },
+        {
+            "name": "Heroku",
+            "image": "src/assets/logos/heroku.png",
+            "mainColor": "#410291",
+            "secondaryColor": "#ffffff",
+            "showName": false
+        },
+        {
+            "name": "Chakra UI",
+            "image": "src/assets/logos/chakra.png",
+            "mainColor": "#37c7ba",
+            "secondaryColor": "#333e4e"
+        },
+        {
+            "name": "Electron",
+            "image": "src/assets/logos/electron.webp",
+            "mainColor": "#a1ebf8",
+            "secondaryColor": "#2b2e39"
+        },
+        {
+            "name": "Expo",
+            "image": "src/assets/logos/expo.png",
+            "mainColor": "#ffffff",
+            "secondaryColor": "#00001f"
+        },
+        {
+            "name": "Express JS",
+            "image": "src/assets/logos/express.png",
+            "mainColor": "#ffffff",
+            "secondaryColor": "#323232",
+            "showName": false
+        }
     ]
 }
