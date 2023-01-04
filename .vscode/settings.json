@@ -18,6 +18,7 @@
 		"Component: SocialButton",
 		"Component: Navbar",
 		"Context: ScrollNavigationContext",
-		"Eslint"
+		"Eslint",
+		"Component: ScrollPoint"
 	]
 }
