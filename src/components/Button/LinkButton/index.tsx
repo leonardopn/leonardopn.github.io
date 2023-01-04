@@ -7,7 +7,7 @@ import { useTheme } from "../../../hooks/useTheme";
 
 interface LinkButtonProps extends ChakraLinkProps {
 	icon?: string;
-	isActive?: boolean;
+	isMain?: boolean;
 	children?: ReactNode;
 	routerProps?: LinkProps;
 	isExternal?: boolean;
@@ -15,7 +15,7 @@ interface LinkButtonProps extends ChakraLinkProps {
 
 export function LinkButton({
 	icon,
-	isActive,
+	isMain,
 	children,
 	routerProps,
 	isExternal = false,
@@ -31,10 +31,12 @@ export function LinkButton({
 			alignItems={"center"}
 			colorScheme="Background"
 			rel="noopener"
-			_hover={{ background: "Background" }}
-			background={
-				isActive ? "Background" : Color(theme.colors.Background).alpha(0.3).toString()
-			}
+			_hover={{
+				background: isMain
+					? Color(theme.colors.Primary).alpha(0.3).toString()
+					: "Background",
+			}}
+			background={isMain ? "Primary" : Color(theme.colors.Background).alpha(0.3).toString()}
 			minW={50}
 			minH={50}
 			borderRadius={10}

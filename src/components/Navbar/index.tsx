@@ -8,7 +8,7 @@ export function Navbar() {
 			<VStack w={20} bg="Background2" position="sticky" top={10} spacing={10}>
 				<Tooltip hasArrow label="Início" bg="Primary" color="white" placement="right">
 					<span>
-						<LinkButton icon="mdi:home" isExternal href={PossibleRoutes[0]} />
+						<LinkButton icon="mdi:home" isExternal href={PossibleRoutes[0]} isMain />
 					</span>
 				</Tooltip>
 				<VStack spacing={5}>
