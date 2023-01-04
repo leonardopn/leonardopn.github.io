@@ -1,5 +1,5 @@
 import { Link as ChakraLink, LinkProps as ChakraLinkProps } from "@chakra-ui/react";
-import { Icon } from "@iconify/react";
+import { Icon, IconProps } from "@iconify/react";
 import Color from "color";
 import { ReactNode } from "react";
 import { Link, LinkProps } from "react-router-dom";
@@ -7,6 +7,7 @@ import { useTheme } from "../../../hooks/useTheme";
 
 interface LinkButtonProps extends ChakraLinkProps {
 	icon?: string;
+	iconProps?: Omit<IconProps, "icon">;
 	isMain?: boolean;
 	children?: ReactNode;
 	routerProps?: LinkProps;
@@ -15,6 +16,7 @@ interface LinkButtonProps extends ChakraLinkProps {
 
 export function LinkButton({
 	icon,
+	iconProps,
 	isMain,
 	children,
 	routerProps,
@@ -48,6 +50,7 @@ export function LinkButton({
 					width={30}
 					height={30}
 					style={{ marginRight: children ? 10 : 0 }}
+					{...iconProps}
 				/>
 			)}
 
