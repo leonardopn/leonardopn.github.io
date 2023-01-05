@@ -33,7 +33,7 @@ export function AccessCard() {
 	const {
 		boxShadow: { DefaultBoxShadow },
 	} = useTheme();
-	const [isUp480] = useMediaQuery("(min-width: 480px)");
+	const [isUp480] = useMediaQuery("(min-width: 500px)");
 	const [isUp1280px] = useMediaQuery("(min-width: 1280px)");
 
 	const defaultAnimation = useMemo<MotionProps>(
@@ -70,7 +70,8 @@ export function AccessCard() {
 						bg="Background2"
 						borderRadius={isUp480 ? 10 : 0}
 						position="relative"
-						m={isUp480 ? 10 : 0}
+						ml={isUp480 ? 10 : 0}
+						mr={isUp480 ? 5 : 0}
 						mb={isUp480 ? cardMb : 0}
 						mt={isUp480 ? -ribbonCardTop - 80 : 0}
 						_hover={{ mt: isUp480 ? -ribbonCardTop : 0 }}
