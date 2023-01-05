@@ -70,7 +70,7 @@ export function Skill({
 				gap={3}
 				borderRadius={10}
 				justify={"center"}>
-				<Image src={image} alt={name + "_logo"} w={100} />
+				<Image src={image} alt={name + "_logo"} objectFit="scale-down" h="full" />
 				{showName && (
 					<Text color={mainColor} as="b">
 						{name}
