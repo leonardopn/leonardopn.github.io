@@ -10,7 +10,7 @@ import { Timeline } from "../Timeline";
 
 export function CardMainInformation() {
 	const { name, role, about } = useMe();
-	const [isUp480px] = useMediaQuery("(min-width: 480px)");
+	const [isUp500px] = useMediaQuery("(min-width: 500px)");
 
 	const {
 		boxShadow: { DefaultBoxShadow },
@@ -20,12 +20,12 @@ export function CardMainInformation() {
 		() =>
 			!isMobile
 				? {
-						initial: { x: 1500, display: "none" },
-						animate: { x: 0, display: "block" },
+						initial: { x: 1500, opacity: 0 },
+						animate: { x: 0, opacity: 1 },
 						transition: { type: "spring", bounce: 1, damping: 15, delay: 1 },
 				  }
 				: {},
-		[isUp480px, isMobile]
+		[isUp500px, isMobile]
 	);
 
 	return (
@@ -34,18 +34,18 @@ export function CardMainInformation() {
 				<ScrollPoint id="#home" />
 				<Flex
 					boxShadow={DefaultBoxShadow}
-					w={isUp480px ? "fit-content" : "100%"}
+					w={isUp500px ? "fit-content" : "100%"}
 					h="fit-content"
 					direction={"column"}
 					bg="Background2"
 					flex={1}
-					margin={isUp480px ? 10 : 0}
-					borderRadius={isUp480px ? 10 : 0}
+					margin={isUp500px ? 10 : 0}
+					borderRadius={isUp500px ? 10 : 0}
 					position="relative"
 					gap={5}
-					p={isUp480px ? 10 : 5}>
+					p={isUp500px ? 10 : 5}>
 					<Flex direction="column">
-						{isUp480px && (
+						{isUp500px && (
 							<>
 								<Text as="b" fontSize="4xl">
 									{name}

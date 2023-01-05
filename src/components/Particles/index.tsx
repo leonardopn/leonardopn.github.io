@@ -9,7 +9,7 @@ interface ParticlesProps extends IParticlesProps {}
 
 export function Particles({ options, ...restProps }: ParticlesProps) {
 	const { colors } = useTheme();
-	const [isUp480] = useMediaQuery("(min-width: 480px)");
+	const [isUp480] = useMediaQuery("(min-width: 500px)");
 
 	const particlesInit = useCallback(async (engine: Engine) => {
 		import.meta.env.DEV && console.log(engine);

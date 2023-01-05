@@ -8,11 +8,11 @@ import { ScrollNavigationProvider } from "../contexts/ScrollNavigationContext";
 
 export function App() {
 	const [isUp1280px] = useMediaQuery("(min-width: 1280px)");
-	const [isUp480px] = useMediaQuery("(min-width: 480px)");
+	const [isUp500px] = useMediaQuery("(min-width: 500px)");
 
 	return (
 		<ScrollNavigationProvider>
-			<Flex direction={isUp480px ? "row" : "column"}>
+			<Flex direction={isUp500px ? "row" : "column"}>
 				<Navbar />
 				<Flex
 					marginX={"auto"}
@@ -22,7 +22,7 @@ export function App() {
 					align={isUp1280px ? "normal" : "center"}>
 					<Particles />
 					<AccessCard />
-					{!isUp480px && (
+					{!isUp500px && (
 						<AnimatePresence>
 							<motion.div
 								{...{
