@@ -24,5 +24,6 @@
 		"Component: SelectorLanguageButton",
 		"i18n",
 		"Hook: useLocales"
-	]
+	],
+	"i18n-ally.localesPaths": ["src/global/locales"]
 }
