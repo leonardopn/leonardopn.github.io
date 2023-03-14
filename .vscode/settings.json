@@ -20,6 +20,7 @@
 		"Context: ScrollNavigationContext",
 		"Eslint",
 		"Component: ScrollPoint",
-		"Component: NavbarMobile"
+		"Component: NavbarMobile",
+		"Component: SelectorLanguageButton"
 	]
 }
