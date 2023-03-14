@@ -9,14 +9,25 @@ import {
 	Portal,
 	Tooltip,
 	useDisclosure,
+	useMediaQuery,
 	VStack,
 } from "@chakra-ui/react";
+import { useMemo } from "react";
 import Flag from "react-world-flags";
 import { useLocales } from "../../../hooks/useLocales";
 
 export function SelectorLanguageButton() {
 	const { isOpen, onClose, onToggle } = useDisclosure();
 	const { currentLang, allLangs, onChangeLang } = useLocales();
+	const [isUp500px] = useMediaQuery("(min-width: 500px)");
+	const sizes = useMemo(() => {
+		return isUp500px
+			? {
+					buttonSize: "50px",
+					flagSize: 30,
+			  }
+			: { buttonSize: "40px", flagSize: 20 };
+	}, [isUp500px]);
 
 	function handleChangeLang(lang: string) {
 		onChangeLang(lang);
@@ -28,12 +39,12 @@ export function SelectorLanguageButton() {
 			<PopoverTrigger>
 				<Button
 					onClick={onToggle}
-					minW={50}
-					minH={50}
+					minW={sizes.buttonSize}
+					minH={sizes.buttonSize}
 					borderRadius={10}
 					colorScheme={"DefaultButton"}
 					padding="0">
-					<Flag code={currentLang.flag} width="30" />
+					<Flag code={currentLang.flag} width={sizes.flagSize} />
 				</Button>
 			</PopoverTrigger>
 			<Portal>
@@ -55,10 +66,12 @@ export function SelectorLanguageButton() {
 													? "Background"
 													: undefined
 											}
-											minW={50}
-											minH={50}
+											minW={sizes.buttonSize}
+											minH={sizes.buttonSize}
 											aria-label={language.label}
-											icon={<Flag code={language.flag} width="30" />}
+											icon={
+												<Flag code={language.flag} width={sizes.flagSize} />
+											}
 											w="full"
 											colorScheme={"DefaultButton"}
 											onClick={() => handleChangeLang(language.value)}

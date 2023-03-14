@@ -1,4 +1,4 @@
-import { Stack, Tooltip, useBoolean, useMediaQuery, VStack } from "@chakra-ui/react";
+import { HStack, Stack, Tooltip, useBoolean, useMediaQuery, VStack } from "@chakra-ui/react";
 import { PossibleRoutes } from "../../contexts/ScrollNavigationContext";
 import { useLocales } from "../../hooks/useLocales";
 import { LinkButton } from "../Button/LinkButton";
@@ -80,7 +80,8 @@ export function Navbar() {
 				</VStack>
 			)}
 			{!isUp500px && (
-				<>
+				<HStack justifyContent="space-between" flex={1}>
+					<SelectorLanguageButton />
 					<LinkButton
 						onClick={on}
 						minH={30}
@@ -89,7 +90,7 @@ export function Navbar() {
 						icon="mdi:hamburger-menu"
 					/>
 					<NavbarMobile isOpen={isOpen} onClose={off} />
-				</>
+				</HStack>
 			)}
 		</Stack>
 	);
