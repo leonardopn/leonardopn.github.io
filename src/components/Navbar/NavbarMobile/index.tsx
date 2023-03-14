@@ -7,6 +7,7 @@ import {
 	VStack,
 } from "@chakra-ui/react";
 import { PossibleRoutes } from "../../../contexts/ScrollNavigationContext";
+import { useLocales } from "../../../hooks/useLocales";
 import { LinkButton } from "../../Button/LinkButton";
 
 interface NavbarMobileProps {
@@ -15,6 +16,7 @@ interface NavbarMobileProps {
 }
 
 export function NavbarMobile({ isOpen, onClose }: NavbarMobileProps) {
+	const { t } = useLocales();
 	function handleOnClose() {
 		onClose();
 	}
@@ -32,7 +34,7 @@ export function NavbarMobile({ isOpen, onClose }: NavbarMobileProps) {
 							href={PossibleRoutes[0]}
 							isMain
 							onClick={handleOnClose}>
-							Início
+							{t("inicio")}
 						</LinkButton>
 						<VStack spacing={5} alignItems="stretch">
 							<LinkButton
@@ -40,14 +42,14 @@ export function NavbarMobile({ isOpen, onClose }: NavbarMobileProps) {
 								isExternal
 								href={PossibleRoutes[1]}
 								icon="mdi:chart-timeline-variant-shimmer">
-								Linha do Tempo
+								{t("linha.do.tempo")}
 							</LinkButton>
 							<LinkButton
 								onClick={handleOnClose}
 								isExternal
 								href={PossibleRoutes[2]}
 								icon="material-symbols:computer-rounded">
-								Tecnologias Conhecidas
+								{t("tecnologias.conhecidas")}
 							</LinkButton>
 						</VStack>
 					</VStack>

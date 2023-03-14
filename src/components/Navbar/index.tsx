@@ -1,11 +1,13 @@
 import { Stack, Tooltip, useBoolean, useMediaQuery, VStack } from "@chakra-ui/react";
 import { PossibleRoutes } from "../../contexts/ScrollNavigationContext";
+import { useLocales } from "../../hooks/useLocales";
 import { LinkButton } from "../Button/LinkButton";
 import { SelectorLanguageButton } from "../Button/SelectorLanguageButton";
 import { NavbarMobile } from "./NavbarMobile";
 
 export function Navbar() {
 	const [isUp500px] = useMediaQuery("(min-width: 500px)");
+	const { t } = useLocales();
 	const [isOpen, { off, on }] = useBoolean(false);
 
 	return (
@@ -24,7 +26,12 @@ export function Navbar() {
 			direction={isUp500px ? "column" : "row-reverse"}>
 			{isUp500px && (
 				<VStack w={20} bg="Background2" spacing={10} h="full">
-					<Tooltip hasArrow label="Início" bg="Primary" color="white" placement="right">
+					<Tooltip
+						hasArrow
+						label={t("inicio")}
+						bg="Primary"
+						color="white"
+						placement="right">
 						<span>
 							<LinkButton
 								icon="mdi:home"
@@ -37,7 +44,7 @@ export function Navbar() {
 					<VStack spacing={5} direction={isUp500px ? "row" : "column"}>
 						<Tooltip
 							hasArrow
-							label="Linha do Tempo"
+							label={t("linha.do.tempo")}
 							bg="Primary"
 							color="white"
 							placement="right">
@@ -51,7 +58,7 @@ export function Navbar() {
 						</Tooltip>
 						<Tooltip
 							hasArrow
-							label="Tecnologias Conhecidas"
+							label={t("tecnologias.conhecidas")}
 							bg="Primary"
 							color="white"
 							placement="right">

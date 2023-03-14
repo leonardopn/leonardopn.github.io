@@ -38,6 +38,9 @@ const ptBr = {
 			description: "Pós-graduação em Projetos de Cloud Computing.",
 		},
 	},
+	"linha.do.tempo": "Linha do tempo",
+	inicio: "Início",
+	"tecnologias.conhecidas": "Tecnologias Conhecidas",
 };
 
 export default ptBr;

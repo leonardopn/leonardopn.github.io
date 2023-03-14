@@ -2,6 +2,7 @@ import { Divider, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 import { AnimatePresence, motion, MotionProps } from "framer-motion";
 import { useMemo } from "react";
 import { isMobile } from "react-device-detect";
+import { useLocales } from "../../hooks/useLocales";
 import { useMe } from "../../hooks/useMe";
 import { useTheme } from "../../hooks/useTheme";
 import { ScrollPoint } from "../ScrollPoint";
@@ -10,6 +11,7 @@ import { Timeline } from "../Timeline";
 
 export function CardMainInformation() {
 	const { name, role, about } = useMe();
+	const { t } = useLocales();
 	const [isUp500px] = useMediaQuery("(min-width: 500px)");
 
 	const {
@@ -63,7 +65,7 @@ export function CardMainInformation() {
 					<Divider size="3" />
 					<Flex direction="column" gap={5}>
 						<Text as="b" fontSize="2xl">
-							Linha do Tempo
+							{t("linha.do.tempo")}
 						</Text>
 						<Timeline />
 					</Flex>
@@ -71,7 +73,7 @@ export function CardMainInformation() {
 					<Divider />
 					<Flex direction="column" gap={5}>
 						<Text as="b" fontSize="2xl">
-							Tecnologias Conhecidas
+							{t("tecnologias.conhecidas")}
 						</Text>
 						<Skills />
 					</Flex>
