@@ -7,40 +7,64 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 	Portal,
+	Tooltip,
+	useDisclosure,
 	VStack,
 } from "@chakra-ui/react";
 import Flag from "react-world-flags";
-import { languages } from "../../../mock/languages";
+import { useLocales } from "../../../hooks/useLocales";
 
 export function SelectorLanguageButton() {
+	const { isOpen, onClose, onToggle } = useDisclosure();
+	const { currentLang, allLangs, onChangeLang } = useLocales();
+
+	function handleChangeLang(lang: string) {
+		onChangeLang(lang);
+		onClose();
+	}
+
 	return (
-		<Popover placement="auto-end">
+		<Popover placement="auto-end" isOpen={isOpen} onClose={onClose}>
 			<PopoverTrigger>
 				<Button
+					onClick={onToggle}
 					minW={50}
 					minH={50}
 					borderRadius={10}
 					colorScheme={"DefaultButton"}
 					padding="0">
-					<Flag code="br" width="30" />
+					<Flag code={currentLang.flag} width="30" />
 				</Button>
 			</PopoverTrigger>
 			<Portal>
 				<PopoverContent bg="Background2" w="fit-content" borderColor="Background">
 					<PopoverArrow bg="Background" boxShadow={"none"} />
-
 					<PopoverBody>
 						<VStack align="start">
-							{languages.map(language => (
-								<IconButton
-									minW={50}
-									minH={50}
-									aria-label={language.label}
-									icon={<Flag code={language.value} width="30" />}
-									key={language.id}
-									w="full"
-									colorScheme={"DefaultButton"}
-								/>
+							{allLangs.map(language => (
+								<Tooltip
+									key={language.value}
+									label={language.label}
+									hasArrow
+									placement="right"
+									bg="Primary">
+									<span>
+										<IconButton
+											bg={
+												language.value === currentLang.value
+													? "Background"
+													: undefined
+											}
+											minW={50}
+											minH={50}
+											aria-label={language.label}
+											icon={<Flag code={language.flag} width="30" />}
+											w="full"
+											colorScheme={"DefaultButton"}
+											onClick={() => handleChangeLang(language.value)}
+										/>
+									</span>
+								</Tooltip>
 							))}
 						</VStack>
 					</PopoverBody>
