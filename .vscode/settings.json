@@ -23,7 +23,8 @@
 		"Component: NavbarMobile",
 		"Component: SelectorLanguageButton",
 		"i18n",
-		"Hook: useLocales"
+		"Hook: useLocales",
+		"Hook: useMe"
 	],
 	"i18n-ally.localesPaths": ["src/global/locales"]
 }
