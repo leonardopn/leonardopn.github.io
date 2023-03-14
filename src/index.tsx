@@ -6,6 +6,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import { theme } from "./global/styles/theme";
 import { router } from "./routes";
+import "./configs/i18n";
 
 import "react-vertical-timeline-component/style.min.css";
 

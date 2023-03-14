@@ -1,0 +1,43 @@
+{
+	"personalInformation": {
+		"role": "FullStack Developer",
+		"miniAbout": "Hello, I'm Leonardo, student and developer. Welcome to my website!",
+		"about": "I have a degree in computer science at Universidade Paulista (UNIP) and a developer at TradePro Tecnologia. In addition, I'm taking a postgraduate course in Mobile Multiplatform Development at Faculdade Descomplica. Currently I work with fullstack projects, using the programming languages, Node (TypeScript), React and Firebase. I spent a long time focused on web development with React and Node, but today, I try to improve myself in the mobile area with React Native."
+	},
+
+	"bacharelado": "Bachelor degree",
+	"faculdade": "Faculty",
+	"pos.graduacao": "Postgraduate",
+
+	"timeline": {
+		"1": {
+			"role": "Computer Science",
+			"description": "Degree in Computer Science."
+		},
+		"2": {
+			"role": "Trainee in development",
+			"description": "Responsible for the development of small automations and support."
+		},
+		"3": {
+			"role": "Full Developer",
+			"description": "Responsible for the development and maintenance of internal systems.",
+			"period": "Nov 2020 - Apr 2022"
+		},
+		"4": {
+			"role": "Full Developer",
+			"description": "Responsible for the development and maintenance of internal systems using React, React native and Firebase.",
+			"period": "Apr 2022 - Present"
+		},
+		"5": {
+			"role": "Mobile cross-platform development",
+			"description": "Postgraduate in mobile cross-platform development."
+		},
+		"6": {
+			"role": "Cloud Computing Projects",
+			"description": "Graduate in Cloud Computing Projects."
+		}
+	},
+	"linha.do.tempo": "Timeline",
+	"inicio": "Home",
+	"tecnologias.conhecidas": "Known Technologies"
+}

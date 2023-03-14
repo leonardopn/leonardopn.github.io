@@ -20,6 +20,11 @@
 		"Context: ScrollNavigationContext",
 		"Eslint",
 		"Component: ScrollPoint",
-		"Component: NavbarMobile"
-	]
+		"Component: NavbarMobile",
+		"Component: SelectorLanguageButton",
+		"i18n",
+		"Hook: useLocales",
+		"Hook: useMe"
+	],
+	"i18n-ally.localesPaths": ["src/global/locales"]
 }

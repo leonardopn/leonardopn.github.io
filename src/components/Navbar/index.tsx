@@ -1,10 +1,13 @@
-import { Stack, Tooltip, useBoolean, useMediaQuery, VStack } from "@chakra-ui/react";
+import { HStack, Stack, Tooltip, useBoolean, useMediaQuery, VStack } from "@chakra-ui/react";
 import { PossibleRoutes } from "../../contexts/ScrollNavigationContext";
+import { useLocales } from "../../hooks/useLocales";
 import { LinkButton } from "../Button/LinkButton";
+import { SelectorLanguageButton } from "../Button/SelectorLanguageButton";
 import { NavbarMobile } from "./NavbarMobile";
 
 export function Navbar() {
 	const [isUp500px] = useMediaQuery("(min-width: 500px)");
+	const { t } = useLocales();
 	const [isOpen, { off, on }] = useBoolean(false);
 
 	return (
@@ -15,15 +18,20 @@ export function Navbar() {
 			paddingX={isUp500px ? 0 : 5}
 			paddingY={isUp500px ? 5 : 0}
 			align="center"
-			position={!isUp500px ? "sticky" : "initial"}
+			position={"sticky"}
 			top={0}
 			spacing={10}
-			h={isUp500px ? "auto" : "16"}
+			h={isUp500px ? "100vh" : "16"}
 			borderBottomWidth={!isUp500px ? 1 : 0}
 			direction={isUp500px ? "column" : "row-reverse"}>
 			{isUp500px && (
-				<VStack w={20} bg="Background2" position="sticky" top={10} spacing={10}>
-					<Tooltip hasArrow label="Início" bg="Primary" color="white" placement="right">
+				<VStack w={20} bg="Background2" spacing={10} h="full">
+					<Tooltip
+						hasArrow
+						label={t("inicio")}
+						bg="Primary"
+						color="white"
+						placement="right">
 						<span>
 							<LinkButton
 								icon="mdi:home"
@@ -36,7 +44,7 @@ export function Navbar() {
 					<VStack spacing={5} direction={isUp500px ? "row" : "column"}>
 						<Tooltip
 							hasArrow
-							label="Linha do Tempo"
+							label={t("linha.do.tempo")}
 							bg="Primary"
 							color="white"
 							placement="right">
@@ -50,7 +58,7 @@ export function Navbar() {
 						</Tooltip>
 						<Tooltip
 							hasArrow
-							label="Tecnologias Conhecidas"
+							label={t("tecnologias.conhecidas")}
 							bg="Primary"
 							color="white"
 							placement="right">
@@ -63,10 +71,17 @@ export function Navbar() {
 							</span>
 						</Tooltip>
 					</VStack>
+					<VStack
+						spacing={5}
+						direction={isUp500px ? "row" : "column"}
+						marginTop="auto!important">
+						<SelectorLanguageButton />
+					</VStack>
 				</VStack>
 			)}
 			{!isUp500px && (
-				<>
+				<HStack justifyContent="space-between" flex={1}>
+					<SelectorLanguageButton />
 					<LinkButton
 						onClick={on}
 						minH={30}
@@ -75,7 +90,7 @@ export function Navbar() {
 						icon="mdi:hamburger-menu"
 					/>
 					<NavbarMobile isOpen={isOpen} onClose={off} />
-				</>
+				</HStack>
 			)}
 		</Stack>
 	);
