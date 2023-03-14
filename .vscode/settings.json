@@ -22,6 +22,7 @@
 		"Component: ScrollPoint",
 		"Component: NavbarMobile",
 		"Component: SelectorLanguageButton",
-		"i18n"
+		"i18n",
+		"Hook: useLocales"
 	]
 }
