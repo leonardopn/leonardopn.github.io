@@ -1,6 +1,7 @@
 import { Stack, Tooltip, useBoolean, useMediaQuery, VStack } from "@chakra-ui/react";
 import { PossibleRoutes } from "../../contexts/ScrollNavigationContext";
 import { LinkButton } from "../Button/LinkButton";
+import { SelectorLanguageButton } from "../Button/SelectorLanguageButton";
 import { NavbarMobile } from "./NavbarMobile";
 
 export function Navbar() {
@@ -15,14 +16,14 @@ export function Navbar() {
 			paddingX={isUp500px ? 0 : 5}
 			paddingY={isUp500px ? 5 : 0}
 			align="center"
-			position={!isUp500px ? "sticky" : "initial"}
+			position={"sticky"}
 			top={0}
 			spacing={10}
-			h={isUp500px ? "auto" : "16"}
+			h={isUp500px ? "100vh" : "16"}
 			borderBottomWidth={!isUp500px ? 1 : 0}
 			direction={isUp500px ? "column" : "row-reverse"}>
 			{isUp500px && (
-				<VStack w={20} bg="Background2" position="sticky" top={10} spacing={10}>
+				<VStack w={20} bg="Background2" spacing={10} h="full">
 					<Tooltip hasArrow label="Início" bg="Primary" color="white" placement="right">
 						<span>
 							<LinkButton
@@ -62,6 +63,12 @@ export function Navbar() {
 								/>
 							</span>
 						</Tooltip>
+					</VStack>
+					<VStack
+						spacing={5}
+						direction={isUp500px ? "row" : "column"}
+						marginTop="auto!important">
+						<SelectorLanguageButton />
 					</VStack>
 				</VStack>
 			)}
