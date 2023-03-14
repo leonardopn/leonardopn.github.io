@@ -21,6 +21,7 @@
 		"Eslint",
 		"Component: ScrollPoint",
 		"Component: NavbarMobile",
-		"Component: SelectorLanguageButton"
+		"Component: SelectorLanguageButton",
+		"i18n"
 	]
 }
