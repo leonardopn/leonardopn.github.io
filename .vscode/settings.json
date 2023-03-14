@@ -26,5 +26,6 @@
 		"Hook: useLocales",
 		"Hook: useMe"
 	],
-	"i18n-ally.localesPaths": ["src/global/locales"]
+	"i18n-ally.localesPaths": ["src/global/locales"],
+	"i18n-ally.sourceLanguage": "pt-BR"
 }
