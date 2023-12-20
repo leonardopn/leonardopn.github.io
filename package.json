@@ -19,6 +19,8 @@
     "@fontsource/bebas-neue": "^5.0.18",
     "@fontsource/jetbrains-mono": "^5.0.18",
     "@fontsource/poppins": "^5.0.8",
+    "@tsparticles/engine": "^3.0.2",
+    "@tsparticles/react": "^3.0.0",
     "color": "^4.2.3",
     "framer-motion": "^10.16.16",
     "i18next": "^23.7.11",
@@ -30,7 +32,6 @@
     "react-i18next": "^13.5.0",
     "react-parallax-tilt": "^1.7.177",
     "react-router-dom": "^6.21.0",
-    "react-tsparticles": "^2.7.1",
     "react-vertical-timeline-component": "^3.6.0",
     "react-world-flags": "^1.6.0",
     "tsparticles": "^3.0.2"

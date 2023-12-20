@@ -1,8 +1,8 @@
 import { useMediaQuery } from "@chakra-ui/react";
-import { useCallback, useMemo } from "react";
-import TsParticles, { IParticlesProps } from "react-tsparticles";
+import type { Container } from "@tsparticles/engine";
+import TsParticles, { IParticlesProps, initParticlesEngine } from "@tsparticles/react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { loadFull } from "tsparticles";
-import type { Container, Engine } from "tsparticles-engine";
 import { useTheme } from "../../hooks/useTheme";
 
 interface ParticlesProps extends IParticlesProps {}
@@ -11,13 +11,22 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 	const { colors } = useTheme();
 	const [isUp480] = useMediaQuery("(min-width: 500px)");
 
-	const particlesInit = useCallback(async (engine: Engine) => {
-		import.meta.env.DEV && console.log(engine);
-		// NOTE: you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-		// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-		// starting from v2 you can add only the features you need reducing the bundle size
-		await loadFull(engine);
-	}, []);
+	const [ init, setInit ] = useState(false);
+
+    // this should be run only once per application lifetime
+    useEffect(() => {
+        initParticlesEngine(async (engine) => {
+            // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+            // starting from v2 you can add only the features you need reducing the bundle size
+            //await loadAll(engine);
+            //await loadFull(engine);
+            await loadFull(engine);
+            //await loadBasic(engine);
+        }).then(() => {
+            setInit(true);
+        });
+    }, []);
 
 	const particlesLoaded = useCallback(async (container: Container | undefined) => {
 		import.meta.env.DEV && console.log(container);
@@ -45,7 +54,7 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 						enable: true,
 						mode: "repulse",
 					},
-					resize: true,
+					resize:{enable:true}
 				},
 				modes: {
 					push: {
@@ -106,11 +115,11 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 	//NOTE: disable particles on mobile
 	if (!isUp480) return null;
 
+	if(init)
 	return (
 		<TsParticles
 			id="tsparticles"
-			init={particlesInit}
-			loaded={particlesLoaded}
+			particlesLoaded={particlesLoaded}
 			options={options ?? defaultParticlesOptions}
 			{...restProps}
 		/>
