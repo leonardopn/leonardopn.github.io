@@ -30,6 +30,7 @@ import postgresqlLogo from "../assets/logos/postgresql.png";
 import eslintLogo from "../assets/logos/eslint.png";
 import jiraLogo from "../assets/logos/jira.png";
 import prettierLogo from "../assets/logos/prettier.png";
+import tailwindLogo from "../assets/logos/tailwindcss.svg";
 
 export const skills = [
 	{
@@ -49,6 +50,12 @@ export const skills = [
 		image: nodeLogo,
 		mainColor: "#78b763",
 		secondaryColor: "#303030",
+	},
+	{
+		name: "Tailwind CSS",
+		image: tailwindLogo,
+		mainColor: "#fff",
+		secondaryColor: "#3ebdf2",
 	},
 	{
 		name: "CSS3",
