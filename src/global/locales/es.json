@@ -1,49 +1,49 @@
 {
-  "personalInformation": {
-    "miniAbout": "Hola, soy Leonardo, estudiante y desarrollador. \n¡Bienvenidos a mi sitio web!",
-    "role": "Desarrollador FullStack",
-    "about": "Soy licenciado en informática por la Universidade Paulista (UNIP) y desarrollador en TradePro Tecnologia. \nAdemás, tengo un posgrado en Desarrollo Móvil Multiplataforma y Proyectos de Computación en la Nube en la Faculdade Descomplica. \nActualmente trabajo con proyectos fullstack, utilizando lenguajes de programación como Node (TypeScript), React y Firebase. \nHoy me estoy enfocando en mejorar las habilidades fullstack ya mencionadas y aprender más sobre Mongo DB, Expo y especialmente las tecnologías Next. \nEste movimiento refleja no sólo mi trayectoria, sino también mi compromiso continuo con el desarrollo de software integral e innovador."
-  },
-  "pos": {
-    "graduacao": "Posgraduación"
-  },
-  "tecnologias": {
-    "conhecidas": "Tecnologías conocidas"
-  },
-  "timeline": {
-    "1": {
-      "description": "Licenciatura en Informática.",
-      "role": "Ciencia de la computación"
-    },
-    "2": {
-      "description": "Responsable del desarrollo de pequeñas automatizaciones y soporte.",
-      "role": "Etapa de desarrollo"
-    },
-    "3": {
-      "description": "Responsable del desarrollo y mantenimiento de los sistemas internos.",
-      "period": "Noviembre de 2020 - Abril de 2022",
-      "role": "Desarrollador completo"
-    },
-    "4": {
-      "description": "Responsable de desarrollar y mantener sistemas internos utilizando React, React nativo y Firebase.",
-      "period": "Abril de 2022 - Presente",
-      "role": "Desarrollador completo"
-    },
-    "5": {
-      "description": "Postgrado en desarrollo móvil multiplataforma.",
-      "role": "Desarrollo móvil multiplataforma"
-    },
-    "6": {
-      "description": "Postgrado en Proyectos de Computación en la Nube.",
-      "role": "Proyectos de computación en la nube"
-    }
-  },
-  "bacharelado": "Licenciatura",
-  "faculdade": "Facultad",
-  "inicio": "Comenzar",
-  "linha": {
-    "do": {
-      "tempo": "Linea del tiempo"
-    }
-  }
+	"personalInformation": {
+		"miniAbout": "Hola, soy Leonardo, estudiante y desarrollador. \n¡Bienvenidos a mi sitio web!",
+		"role": "Desarrollador FullStack",
+		"about": "Soy licenciado en informática por la Universidade Paulista (UNIP) y desarrollador en TradePro Tecnologia. \nAdemás, tengo un posgrado en Desarrollo Móvil Multiplataforma y Proyectos de Computación en la Nube en la Faculdade Descomplica. \nActualmente trabajo con proyectos fullstack, utilizando lenguajes de programación como Node (TypeScript), React y Firebase. \nHoy me estoy enfocando en mejorar las habilidades fullstack ya mencionadas y aprender más sobre Mongo DB, Expo y especialmente las tecnologías Next. \nEste movimiento refleja no sólo mi trayectoria, sino también mi compromiso continuo con el desarrollo de software integral e innovador."
+	},
+	"pos": {
+		"graduacao": "Posgraduación"
+	},
+	"tecnologias": {
+		"conhecidas": "Tecnologías conocidas"
+	},
+	"timeline": {
+		"1": {
+			"description": "Licenciatura en Informática.",
+			"role": "Ciencia de la computación"
+		},
+		"2": {
+			"description": "Responsable del desarrollo de pequeñas automatizaciones y soporte.",
+			"role": "Etapa de desarrollo"
+		},
+		"3": {
+			"description": "Responsable del desarrollo y mantenimiento de los sistemas internos.",
+			"period": "Noviembre de 2020 - Abril de 2022",
+			"role": "Desarrollador completo"
+		},
+		"4": {
+			"description": "Responsable de desarrollar y mantener sistemas internos utilizando React, React nativo y Firebase.",
+			"period": "Abril de 2022 - Presente",
+			"role": "Desarrollador completo"
+		},
+		"5": {
+			"description": "Postgrado en desarrollo móvil multiplataforma.",
+			"role": "Desarrollo móvil multiplataforma"
+		},
+		"6": {
+			"description": "Postgrado en Proyectos de Computación en la Nube.",
+			"role": "Proyectos de computación en la nube"
+		}
+	},
+	"bacharelado": "Licenciatura",
+	"faculdade": "Facultad",
+	"inicio": "Comenzar",
+	"linha": {
+		"do": {
+			"tempo": "Linea del tiempo"
+		}
+	}
 }

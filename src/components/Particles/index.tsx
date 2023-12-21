@@ -11,22 +11,22 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 	const { colors } = useTheme();
 	const [isUp480] = useMediaQuery("(min-width: 500px)");
 
-	const [ init, setInit ] = useState(false);
+	const [init, setInit] = useState(false);
 
-    // this should be run only once per application lifetime
-    useEffect(() => {
-        initParticlesEngine(async (engine) => {
-            // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-            // starting from v2 you can add only the features you need reducing the bundle size
-            //await loadAll(engine);
-            //await loadFull(engine);
-            await loadFull(engine);
-            //await loadBasic(engine);
-        }).then(() => {
-            setInit(true);
-        });
-    }, []);
+	// this should be run only once per application lifetime
+	useEffect(() => {
+		initParticlesEngine(async engine => {
+			// you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+			// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+			// starting from v2 you can add only the features you need reducing the bundle size
+			//await loadAll(engine);
+			//await loadFull(engine);
+			await loadFull(engine);
+			//await loadBasic(engine);
+		}).then(() => {
+			setInit(true);
+		});
+	}, []);
 
 	const particlesLoaded = useCallback(async (container: Container | undefined) => {
 		import.meta.env.DEV && console.log(container);
@@ -54,7 +54,7 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 						enable: true,
 						mode: "repulse",
 					},
-					resize:{enable:true}
+					resize: { enable: true },
 				},
 				modes: {
 					push: {
@@ -115,13 +115,13 @@ export function Particles({ options, ...restProps }: ParticlesProps) {
 	//NOTE: disable particles on mobile
 	if (!isUp480) return null;
 
-	if(init)
-	return (
-		<TsParticles
-			id="tsparticles"
-			particlesLoaded={particlesLoaded}
-			options={options ?? defaultParticlesOptions}
-			{...restProps}
-		/>
-	);
+	if (init)
+		return (
+			<TsParticles
+				id="tsparticles"
+				particlesLoaded={particlesLoaded}
+				options={options ?? defaultParticlesOptions}
+				{...restProps}
+			/>
+		);
 }
