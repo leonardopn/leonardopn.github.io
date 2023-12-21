@@ -43,7 +43,7 @@ export function AccessCard() {
 						initial: { y: -1500 },
 						animate: { y: isUp480 ? -250 : 0 },
 						transition: { type: "spring", bounce: 1, damping: 10, delay: 0.3 },
-				  }
+					}
 				: { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { delay: 0.3 } },
 		[isUp480, isMobile]
 	);

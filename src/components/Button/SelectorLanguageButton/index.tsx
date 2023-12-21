@@ -25,7 +25,7 @@ export function SelectorLanguageButton() {
 			? {
 					buttonSize: "50px",
 					flagSize: 30,
-			  }
+				}
 			: { buttonSize: "40px", flagSize: 20 };
 	}, [isUp500px]);
 

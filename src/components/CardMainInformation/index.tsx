@@ -25,7 +25,7 @@ export function CardMainInformation() {
 						initial: { x: 1500, opacity: 0 },
 						animate: { x: 0, opacity: 1 },
 						transition: { type: "spring", bounce: 1, damping: 15, delay: 1 },
-				  }
+					}
 				: {},
 		[isUp500px, isMobile]
 	);
