@@ -1,5 +1,5 @@
 import { skills } from "../mock/skills";
-import photoProfile from "../assets/me.png";
+import photoProfile from "../assets/me.jpg";
 import { useLocales } from "./useLocales";
 import { useMemo } from "react";
 

@@ -3,6 +3,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import enLocales from "../global/locales/en.json";
 import ptBRLocales from "../global/locales/pt-BR.json";
+import esLocales from "../global/locales/es.json";
 
 export const allLangs = [
 	{
@@ -15,6 +16,11 @@ export const allLangs = [
 		value: "en",
 		flag: "us",
 	},
+	{
+		label: "Español",
+		value: "es",
+		flag: "es",
+	},
 ];
 
 export const defaultLang = allLangs[0];
@@ -25,6 +31,7 @@ i18n.use(LanguageDetector)
 		resources: {
 			en: { translations: enLocales },
 			ptBR: { translations: ptBRLocales },
+			es: { translations: esLocales },
 		},
 		lng: localStorage.getItem("i18nextLng") || defaultLang.value,
 		debug: false,
