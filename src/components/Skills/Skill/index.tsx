@@ -45,6 +45,7 @@ export function Skill({
 		() => ({
 			initial: { opacity: 0, transform: "scale(1.5)" },
 			whileInView: { opacity: 1, transform: "scale(1)" },
+			viewport: { once: true },
 			transition: {
 				type: "spring",
 				bounce: 1,
